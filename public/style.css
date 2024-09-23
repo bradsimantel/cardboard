@@ -1,0 +1,146 @@
+/* Use box-sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+
+* {
+  margin: 0;
+}
+
+/* Add accessible line-height and improve text rendering */
+
+body {
+  line-height: 1.5;
+  font-family: sans-serif;
+  display: flex;
+}
+
+/* Remove built-in form typography styles */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Typography */
+
+small {
+  font-size: 0.75rem;
+}
+
+/* Flex */
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+/* Borders */
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.border {
+  border: 1px solid #000;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #000;
+}
+
+.border-right {
+  border-right: 1px solid #000;
+}
+
+/* Sizing */
+
+.w-100 {
+  width: 100%;
+}
+
+.w-33 {
+  width: 33.333%;
+}
+
+/* Border styles */
+.border-dashed {
+  border-style: dashed;
+}
+
+/* Backgrounds */
+.bg-black {
+  background-color: #000;
+  color: white;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+/* Circle */
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid #000;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cursor */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Hover */
+
+.hover-border-double:hover {
+  box-shadow: 0px 0px 0px 1px black inset;
+}
+
+/* SortableJS styling for the element about to be dropped */
+
+.ghost-class:before {
+  background: white;
+  border-style: dashed;
+}
+
+.dragged-item {
+  opacity: 1 !important;
+  transform: rotate(5deg);
+}
