@@ -93,11 +93,6 @@ small {
   width: 33.333%;
 }
 
-/* Border styles */
-.border-dashed {
-  border-style: dashed;
-}
-
 /* Backgrounds */
 .bg-black {
   background-color: #000;
@@ -121,22 +116,24 @@ small {
   align-items: center;
 }
 
+/* Border styles */
+.border-dashed {
+  border-style: dashed;
+}
+
 /* Cursor */
 
 .cursor-pointer {
   cursor: pointer;
 }
 
-/* Hover */
-
-.hover-border-double:hover {
-  box-shadow: 0px 0px 0px 1px black inset;
-}
-
 /* SortableJS styling for the element about to be dropped */
 
-.ghost-class:before {
-  background: white;
+.card {
+  user-select: none;
+}
+
+.ghost-class {
   border-style: dashed;
 }
 
