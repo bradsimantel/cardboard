@@ -15,5 +15,4 @@ Use `caddy file-server` to start a dev server, then go to `http:localhost` to se
 - [ ] Add, rename, or remove columns
 - [ ] Add, rename, or remove boards
 - [ ] Subtasks as checkboxes
-- [ ] Use dashed background for modal: https://stackoverflow.com/questions/68039649/having-striped-dashed-lines-as-background
 - [ ] Use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/

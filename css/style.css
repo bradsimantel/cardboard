@@ -111,6 +111,7 @@ small {
 }
 
 /* Backgrounds */
+
 .bg-black {
   background-color: var(--foreground-color);
   color: var(--background-color);
@@ -118,6 +119,26 @@ small {
 
 .bg-white {
   background-color: var(--background-color);
+}
+
+.bg-striped-outer {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--foreground-color) 0px,
+    var(--foreground-color) 1px,
+    transparent 2px,
+    transparent 9px
+  );
+}
+
+.bg-striped-inner {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--background-color) 0px,
+    var(--background-color) 1px,
+    transparent 3px,
+    transparent 10px
+  );
 }
 
 /* Circle */
