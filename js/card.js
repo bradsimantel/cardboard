@@ -1,6 +1,6 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 import TagIcon from "./icons/tag.js";
-import PaperclipIcon from "./icons/paperlcip.js";
+import PaperclipIcon from "./icons/paperclip.js";
 import CommentIcon from "./icons/comment.js";
 
 export default function Card({
