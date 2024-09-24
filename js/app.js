@@ -1,5 +1,16 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 import DownIcon from "./icons/down.js";
+import SearchIcon from "./icons/search.js";
+import BellIcon from "./icons/bell.js";
+import MenuIcon from "./icons/menu.js";
+import PlusIcon from "./icons/plus.js";
+import SpaIcon from "./icons/spa.js";
+import LeafIcon from "./icons/leaf.js";
+import PyramidIcon from "./icons/pyramid.js";
+import TagIcon from "./icons/tag.js";
+import PaperclipIcon from "./icons/paperlcip.js";
+import CommentIcon from "./icons/comment.js";
+import DotsIcon from "./icons/dots.js";
 
 export default function App() {
   return html`<div class="border-right" style="width: 20rem">
@@ -14,33 +25,33 @@ export default function App() {
           <${DownIcon} />
         </div>
         <div class="flex align-items-center p-1">
-          <img src="./icons/search.svg" height="18" class="me-2" />
+          <${SearchIcon} height="18" className="me-2" />
           <span>Search</span>
         </div>
         <div class="flex align-items-center p-1">
-          <img src="./icons/bell.svg" height="18" class="me-2" />
+          <${BellIcon} height="18" className="me-2" />
           <span>Notifications</span>
         </div>
         <div class="flex align-items-center p-1">
-          <img src="./icons/backlog.svg" height="18" class="me-2" />
+          <${MenuIcon} height="18" className="me-2" />
           <span>All Tasks</span>
         </div>
       </div>
       <div class="p-3">
         <div class="flex justify-content-between align-items-center mb-2">
           <small>BOARDS</small>
-          <img src="./icons/plus.svg" height="18" />
+          <${PlusIcon} height="18" />
         </div>
         <div class="flex align-items-center p-1">
-          <img src="./icons/spa.svg" height="18" class="me-2" />
+          <${SpaIcon} height="18" className="me-2" />
           <span>Design</span>
         </div>
         <div class="flex align-items-center p-1">
-          <img src="./icons/leaf.svg" height="18" class="me-2" />
+          <${LeafIcon} height="18" className="me-2" />
           <span>Green Initiatives</span>
         </div>
         <div class="bg-black rounded flex align-items-center p-1">
-          <img src="./icons/pyramid-white.svg" height="18" class="me-2" />
+          <${PyramidIcon} height="18" className="me-2" invertColor="true" />
           <span>Active Development</span>
         </div>
       </div>
@@ -48,12 +59,12 @@ export default function App() {
     <div class="w-100">
       <div class="flex justify-content-between border-bottom p-3 px-4">
         <div class="flex align-items-center">
-          <img src="./icons/pyramid.svg" height="18" class="me-2" />
+          <${PyramidIcon} height="18" className="me-2" />
           <span>Active Development</span>
         </div>
         <div class="flex align-items-center">
           <span>Settings</span>
-          <img src="./icons/down.svg" />
+          <${DownIcon} />
         </div>
       </div>
       <div class="p-3 flex">
@@ -64,8 +75,8 @@ export default function App() {
               <span>To Do</span>
             </div>
             <div class="flex">
-              <img src="./icons/plus.svg" alt="plus" />
-              <img src="./icons/dots.svg" alt="plus" />
+              <${PlusIcon} alt="plus" />
+              <${DotsIcon} alt="dots" />
             </div>
           </div>
           <div class="column">
@@ -77,11 +88,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>1</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/attachment.svg" height="18" />
+                  <${PaperclipIcon} height="18" />
                   <span>1</span>
                 </div>
               </div>
@@ -96,11 +107,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -113,11 +124,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>1</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>8</span>
                 </div>
               </div>
@@ -131,8 +142,8 @@ export default function App() {
               <span>In Progress</span>
             </div>
             <div class="flex">
-              <img src="./icons/plus.svg" alt="plus" />
-              <img src="./icons/dots.svg" alt="plus" />
+              <${PlusIcon} alt="plus" />
+              <${DotsIcon} alt="dots" />
             </div>
           </div>
           <div class="column">
@@ -144,11 +155,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -161,11 +172,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -179,8 +190,8 @@ export default function App() {
               <span>Done</span>
             </div>
             <div class="flex">
-              <img src="./icons/plus.svg" alt="plus" />
-              <img src="./icons/dots.svg" alt="plus" />
+              <${PlusIcon} alt="plus" />
+              <${DotsIcon} alt="dots" />
             </div>
           </div>
           <div class="column">
@@ -192,11 +203,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -209,11 +220,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -229,11 +240,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>
@@ -246,11 +257,11 @@ export default function App() {
               <div class="flex align-items-center">
                 <div class="circle me-2 bg-black"><small>AH</small></div>
                 <div class="flex align-items-center me-2">
-                  <img src="./icons/tag.svg" height="18" />
+                  <${TagIcon} height="18" />
                   <span>2</span>
                 </div>
                 <div class="flex align-items-center">
-                  <img src="./icons/comment.svg" height="18" />
+                  <${CommentIcon} height="18" />
                   <span>4</span>
                 </div>
               </div>

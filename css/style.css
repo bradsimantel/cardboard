@@ -142,6 +142,10 @@ small {
   fill: var(--foreground-color);
 }
 
+.icon-inverted {
+  fill: var(--background-color);
+}
+
 /* SortableJS styling for the element about to be dropped */
 
 .card {
