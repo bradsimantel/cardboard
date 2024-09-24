@@ -137,6 +137,10 @@ small {
   border-style: dashed;
 }
 
+.ghost-class * {
+  visibility: hidden;
+}
+
 .dragged-item {
   opacity: 1 !important;
   transform: rotate(5deg);
