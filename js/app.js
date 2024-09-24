@@ -1,4 +1,7 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+
+import Card from "./card.js";
+
 import DownIcon from "./icons/down.js";
 import SearchIcon from "./icons/search.js";
 import BellIcon from "./icons/bell.js";
@@ -80,59 +83,25 @@ export default function App() {
             </div>
           </div>
           <div class="column">
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>BUG FIXES</small>
-              </div>
-              <div class="my-2">Fix the bugs found in log-in process</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>1</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${PaperclipIcon} height="18" />
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>UX IMPROVEMENTS</small>
-              </div>
-              <div class="my-2">
-                Improve scrolling performance in large boards
-              </div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>CARDS</small>
-              </div>
-              <div class="my-2">Custom fields in cards</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>1</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>8</span>
-                </div>
-              </div>
-            </div>
+            <${Card}
+              category="bug fixes"
+              title="Fix the bugs found in log-in process"
+              assignee="Anthony Hobday"
+            />
+            <${Card}
+              category="UX IMPROVEMENTS"
+              title="Improve scrolling performance in large boards"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
+            <${Card}
+              category="CARDS"
+              title="Custom fields in cards"
+              assignee="Anthony Hobday"
+              tags="1"
+              comments="8"
+            />
           </div>
         </div>
         <div class="w-33">
@@ -147,40 +116,20 @@ export default function App() {
             </div>
           </div>
           <div class="column">
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>ONBOARDING</small>
-              </div>
-              <div class="my-2">Improve signup flow</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>DOCUMENTS</small>
-              </div>
-              <div class="my-2">Add initial version of documents to app</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
+            <${Card}
+              category="ONBOARDING"
+              title="Improve signup flow"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
+            <${Card}
+              category="DOCUMENTS"
+              title="Add initial version of documents to app"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
           </div>
         </div>
         <div class="w-33">
@@ -195,77 +144,34 @@ export default function App() {
             </div>
           </div>
           <div class="column">
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>COLOUR</small>
-              </div>
-              <div class="my-2">Remove all colour from the app</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>TAGS</small>
-              </div>
-              <div class="my-2">Follow up work on tags</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>CARD DESCRIPTIONS</small>
-              </div>
-              <div class="my-2">
-                Improve editing features in card descriptions so text can be
-                richer than before
-              </div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
-            <div class="card border cursor-pointer rounded p-2 m-3 bg-white">
-              <div>
-                <small>COLOUR</small>
-              </div>
-              <div class="my-2">Found some more colour, so remove that too</div>
-              <div class="flex align-items-center">
-                <div class="circle me-2 bg-black"><small>AH</small></div>
-                <div class="flex align-items-center me-2">
-                  <${TagIcon} height="18" />
-                  <span>2</span>
-                </div>
-                <div class="flex align-items-center">
-                  <${CommentIcon} height="18" />
-                  <span>4</span>
-                </div>
-              </div>
-            </div>
+            <${Card}
+              category="COLOUR"
+              title="Remove all colour from the app"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
+            <${Card}
+              category="TAGS"
+              title="Follow up work on tags"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
+            <${Card}
+              category="CARD DESCRIPTIONS"
+              title="Improve editing features in card descriptions so text can be richer than before"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
+            <${Card}
+              category="COLOUR"
+              title="Found some more colour, so remove that too"
+              assignee="Anthony Hobday"
+              tags="2"
+              comments="4"
+            />
           </div>
         </div>
       </div>
