@@ -88,6 +88,10 @@ small {
   border: 1px solid var(--foreground-color);
 }
 
+.border-hover:hover {
+  box-shadow: 0 0 0 1px var(--foreground-color);
+}
+
 .border-top {
   border-top: 1px solid var(--foreground-color);
 }
