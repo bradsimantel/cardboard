@@ -3,7 +3,9 @@ import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 import Sidebar from "./sidebar.js";
 import Column from "./column.js";
 
-import DownIcon from "./icons/down.js";
+import LockIcon from "./icons/lock.js";
+import StarIcon from "./icons/star.js";
+import DotsIcon from "./icons/dots.js";
 import PyramidIcon from "./icons/pyramid.js";
 
 export default function App() {
@@ -12,13 +14,13 @@ export default function App() {
       column: 0,
       category: "bug fixes",
       title: "Fix the bugs found in log-in process",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
     },
     {
       column: 0,
       category: "UX IMPROVEMENTS",
       title: "Improve scrolling performance in large boards",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
@@ -26,7 +28,7 @@ export default function App() {
       column: 0,
       category: "CARDS",
       title: "Custom fields in cards",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 1,
       comments: 8,
     },
@@ -34,7 +36,7 @@ export default function App() {
       column: 1,
       category: "ONBOARDING",
       title: "Improve signup flow",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
@@ -42,15 +44,15 @@ export default function App() {
       column: 1,
       category: "DOCUMENTS",
       title: "Add initial version of documents to app",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
     {
       column: 2,
-      category: "COLOUR",
-      title: "Remove all colour from the app",
-      assignee: "Anthony Hobday",
+      category: "COLOR",
+      title: "Remove all color from the app",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
@@ -58,7 +60,7 @@ export default function App() {
       column: 2,
       category: "TAGS",
       title: "Follow up work on tags",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
@@ -67,15 +69,15 @@ export default function App() {
       category: "CARD DESCRIPTIONS",
       title:
         "Improve editing features in card descriptions so text can be richer than before",
-      assignee: "Anthony Hobday",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
     {
       column: 2,
-      category: "COLOUR",
-      title: "Found some more colour, so remove that too",
-      assignee: "Anthony Hobday",
+      category: "COLOR",
+      title: "Found some more color, so remove that too",
+      assignee: "Brad Simantel",
       tags: 2,
       comments: 4,
     },
@@ -90,8 +92,9 @@ export default function App() {
           <span>Active Development</span>
         </div>
         <div class="flex align-items-center">
-          <span>Settings</span>
-          <${DownIcon} />
+          <${StarIcon} height="20" className="me-2" />
+          <${LockIcon} height="20" className="me-2" />
+          <${DotsIcon} height="24" />
         </div>
       </div>
       <div class="p-3 flex">

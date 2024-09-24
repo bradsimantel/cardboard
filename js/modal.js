@@ -1,4 +1,5 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import CloseIcon from "./icons/close.js";
 
 export default function Modal({ isOpen, onClose }) {
   if (!isOpen) return null;
@@ -14,13 +15,26 @@ export default function Modal({ isOpen, onClose }) {
         onClick=${onClose}
       >
         <div
-          class="bg-white p-3 rounded border"
+          class="modal bg-white rounded border"
+          style="width: 30rem;"
           onClick=${(e) => e.stopPropagation()}
         >
-          <div>modal</div>
-          <button class="btn btn-secondary mt-3" onClick=${onClose}>
-            Close
-          </button>
+          <div class="p-3 border-bottom flex justify-content-between">
+            <span>Example Modal</span>
+            <${CloseIcon} />
+          </div>
+          <div class="p-3">
+            This is an example modal. It can be used for confirmation dialogues,
+            settings, whatever!
+          </div>
+          <div class="flex justify-content-between p-3 border-top">
+            <span class="border rounded px-2 py-1" onClick=${onClose}>
+              Close
+            </span>
+            <span class="bg-black rounded px-2 py-1" onClick=${onClose}>
+              Save
+            </span>
+          </div>
         </div>
       </div>
     </div>
