@@ -1,6 +1,6 @@
 import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 
-import Card from "./card.js";
+import Column from "./column.js";
 
 import DownIcon from "./icons/down.js";
 import SearchIcon from "./icons/search.js";
@@ -10,13 +10,85 @@ import PlusIcon from "./icons/plus.js";
 import SpaIcon from "./icons/spa.js";
 import LeafIcon from "./icons/leaf.js";
 import PyramidIcon from "./icons/pyramid.js";
-import TagIcon from "./icons/tag.js";
-import PaperclipIcon from "./icons/paperlcip.js";
-import CommentIcon from "./icons/comment.js";
 import DotsIcon from "./icons/dots.js";
 
 export default function App() {
-  return html`<div class="border-right" style="width: 20rem">
+  const tasks = [
+    {
+      column: 0,
+      category: "bug fixes",
+      title: "Fix the bugs found in log-in process",
+      assignee: "Anthony Hobday",
+    },
+    {
+      column: 0,
+      category: "UX IMPROVEMENTS",
+      title: "Improve scrolling performance in large boards",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 0,
+      category: "CARDS",
+      title: "Custom fields in cards",
+      assignee: "Anthony Hobday",
+      tags: 1,
+      comments: 8,
+    },
+    {
+      column: 1,
+      category: "ONBOARDING",
+      title: "Improve signup flow",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 1,
+      category: "DOCUMENTS",
+      title: "Add initial version of documents to app",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 2,
+      category: "COLOUR",
+      title: "Remove all colour from the app",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 2,
+      category: "TAGS",
+      title: "Follow up work on tags",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 2,
+      category: "CARD DESCRIPTIONS",
+      title:
+        "Improve editing features in card descriptions so text can be richer than before",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+    {
+      column: 2,
+      category: "COLOUR",
+      title: "Found some more colour, so remove that too",
+      assignee: "Anthony Hobday",
+      tags: 2,
+      comments: 4,
+    },
+  ];
+
+  return html`
+    <div class="border-right" style="width: 20rem">
       <div class="p-3 border-bottom">
         <div class="flex align-items-center justify-content-between mb-1 py-1">
           <div class="flex">
@@ -71,109 +143,13 @@ export default function App() {
         </div>
       </div>
       <div class="p-3 flex">
-        <div class="w-33">
-          <div class="p-3 pb-0 flex align-items-center justify-content-between">
-            <div class="flex">
-              <span class="circle me-2 border-dashed"></span>
-              <span>To Do</span>
-            </div>
-            <div class="flex">
-              <${PlusIcon} alt="plus" />
-              <${DotsIcon} alt="dots" />
-            </div>
-          </div>
-          <div class="column">
-            <${Card}
-              category="bug fixes"
-              title="Fix the bugs found in log-in process"
-              assignee="Anthony Hobday"
-            />
-            <${Card}
-              category="UX IMPROVEMENTS"
-              title="Improve scrolling performance in large boards"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-            <${Card}
-              category="CARDS"
-              title="Custom fields in cards"
-              assignee="Anthony Hobday"
-              tags="1"
-              comments="8"
-            />
-          </div>
-        </div>
-        <div class="w-33">
-          <div class="p-3 pb-0 flex align-items-center justify-content-between">
-            <div class="flex">
-              <span class="circle me-2"></span>
-              <span>In Progress</span>
-            </div>
-            <div class="flex">
-              <${PlusIcon} alt="plus" />
-              <${DotsIcon} alt="dots" />
-            </div>
-          </div>
-          <div class="column">
-            <${Card}
-              category="ONBOARDING"
-              title="Improve signup flow"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-            <${Card}
-              category="DOCUMENTS"
-              title="Add initial version of documents to app"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-          </div>
-        </div>
-        <div class="w-33">
-          <div class="p-3 pb-0 flex align-items-center justify-content-between">
-            <div class="flex">
-              <span class="circle me-2 bg-black"></span>
-              <span>Done</span>
-            </div>
-            <div class="flex">
-              <${PlusIcon} alt="plus" />
-              <${DotsIcon} alt="dots" />
-            </div>
-          </div>
-          <div class="column">
-            <${Card}
-              category="COLOUR"
-              title="Remove all colour from the app"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-            <${Card}
-              category="TAGS"
-              title="Follow up work on tags"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-            <${Card}
-              category="CARD DESCRIPTIONS"
-              title="Improve editing features in card descriptions so text can be richer than before"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-            <${Card}
-              category="COLOUR"
-              title="Found some more colour, so remove that too"
-              assignee="Anthony Hobday"
-              tags="2"
-              comments="4"
-            />
-          </div>
-        </div>
+        <${Column} title="To Do" tasks=${tasks.filter((t) => t.column === 0)} />
+        <${Column}
+          title="In Progress"
+          tasks=${tasks.filter((t) => t.column === 1)}
+        />
+        <${Column} title="Done" tasks=${tasks.filter((t) => t.column === 2)} />
       </div>
-    </div> `;
+    </div>
+  `;
 }
