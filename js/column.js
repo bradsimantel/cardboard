@@ -1,4 +1,9 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import {
+  html,
+  useEffect,
+  useRef,
+} from "https://unpkg.com/htm/preact/standalone.module.js";
+import Sortable from "https://esm.sh/sortablejs@1.15.3";
 import Card from "./card.js";
 import PlusIcon from "./icons/plus.js";
 import DotsIcon from "./icons/dots.js";
@@ -15,6 +20,20 @@ function ColumnIcon({ title }) {
 }
 
 export default function Column({ title, tasks }) {
+  const columnRef = useRef(null);
+
+  useEffect(() => {
+    if (columnRef.current) {
+      new Sortable(columnRef.current, {
+        group: "shared",
+        animation: 0,
+        forceFallback: true,
+        fallbackClass: "dragged-item",
+        ghostClass: "ghost-class",
+      });
+    }
+  }, []);
+
   return html`
     <div class="w-33">
       <div class="p-3 pb-0 flex align-items-center justify-content-between">
@@ -27,7 +46,7 @@ export default function Column({ title, tasks }) {
           <${DotsIcon} alt="dots" />
         </div>
       </div>
-      <div class="column">
+      <div class="column" ref=${columnRef}>
         ${tasks.map(
           (task) => html`
             <${Card}
