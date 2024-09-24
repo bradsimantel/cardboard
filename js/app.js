@@ -10,7 +10,8 @@ import PlusIcon from "./icons/plus.js";
 import SpaIcon from "./icons/spa.js";
 import LeafIcon from "./icons/leaf.js";
 import PyramidIcon from "./icons/pyramid.js";
-import DotsIcon from "./icons/dots.js";
+import ToneIcon from "./icons/tone.js";
+import CogIcon from "./icons/cog.js";
 
 export default function App() {
   const tasks = [
@@ -88,46 +89,63 @@ export default function App() {
   ];
 
   return html`
-    <div class="border-right" style="width: 20rem">
-      <div class="p-3 border-bottom">
-        <div class="flex align-items-center justify-content-between mb-1 py-1">
-          <div class="flex">
-            <div class="circle bg-black me-2">
-              <small>PI</small>
+    <div
+      class="flex flex-column justify-content-between border-right"
+      style="width: 20rem"
+    >
+      <div>
+        <div class="p-3 border-bottom">
+          <div
+            class="flex align-items-center justify-content-between mb-1 py-1"
+          >
+            <div class="flex">
+              <div class="circle bg-black me-2">
+                <small>PI</small>
+              </div>
+              <span>Playful Industries</span>
             </div>
-            <span>Playful Industries</span>
+            <${DownIcon} />
           </div>
-          <${DownIcon} />
+          <div class="flex align-items-center p-1">
+            <${SearchIcon} height="18" className="me-2" />
+            <span>Search</span>
+          </div>
+          <div class="flex align-items-center p-1">
+            <${BellIcon} height="18" className="me-2" />
+            <span>Notifications</span>
+          </div>
+          <div class="flex align-items-center p-1">
+            <${MenuIcon} height="18" className="me-2" />
+            <span>All Tasks</span>
+          </div>
         </div>
-        <div class="flex align-items-center p-1">
-          <${SearchIcon} height="18" className="me-2" />
-          <span>Search</span>
-        </div>
-        <div class="flex align-items-center p-1">
-          <${BellIcon} height="18" className="me-2" />
-          <span>Notifications</span>
-        </div>
-        <div class="flex align-items-center p-1">
-          <${MenuIcon} height="18" className="me-2" />
-          <span>All Tasks</span>
+        <div class="p-3">
+          <div class="flex justify-content-between align-items-center mb-2">
+            <small>BOARDS</small>
+            <${PlusIcon} height="18" />
+          </div>
+          <div class="flex align-items-center p-1">
+            <${SpaIcon} height="18" className="me-2" />
+            <span>Design</span>
+          </div>
+          <div class="flex align-items-center p-1">
+            <${LeafIcon} height="18" className="me-2" />
+            <span>Green Initiatives</span>
+          </div>
+          <div class="bg-black rounded flex align-items-center p-1">
+            <${PyramidIcon} height="18" className="me-2" invertColor="true" />
+            <span>Active Development</span>
+          </div>
         </div>
       </div>
-      <div class="p-3">
-        <div class="flex justify-content-between align-items-center mb-2">
-          <small>BOARDS</small>
-          <${PlusIcon} height="18" />
+      <div class="p-3 border-top">
+        <div class="flex align-items-center p-1">
+          <${ToneIcon} height="18" className="me-2" />
+          <span>Colors</span>
         </div>
         <div class="flex align-items-center p-1">
-          <${SpaIcon} height="18" className="me-2" />
-          <span>Design</span>
-        </div>
-        <div class="flex align-items-center p-1">
-          <${LeafIcon} height="18" className="me-2" />
-          <span>Green Initiatives</span>
-        </div>
-        <div class="bg-black rounded flex align-items-center p-1">
-          <${PyramidIcon} height="18" className="me-2" invertColor="true" />
-          <span>Active Development</span>
+          <${CogIcon} height="18" className="me-2" />
+          <span>Settings</span>
         </div>
       </div>
     </div>
