@@ -1,8 +1,8 @@
 /* Variables */
 
 :root {
-  --background-color: #5f4b8b;
-  --foreground-color: #e69a8d;
+  --background-color: #f0e9eb;
+  --foreground-color: #7a0b45;
 }
 
 /* Use box-sizing */
@@ -36,6 +36,7 @@ button,
 textarea,
 select {
   font: inherit;
+  color: var(--foreground-color);
 }
 
 /* Avoid text overflows */
@@ -76,6 +77,12 @@ small {
 
 .justify-content-center {
   justify-content: center;
+}
+
+/* Display */
+
+.d-block {
+  display: block;
 }
 
 /* Borders */
