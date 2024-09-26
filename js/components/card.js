@@ -1,4 +1,4 @@
-import { html } from "./lib/preact.js";
+import { html } from "../lib/preact-bundle.js";
 import TagIcon from "./icons/tag.js";
 import PaperclipIcon from "./icons/paperclip.js";
 import CommentIcon from "./icons/comment.js";

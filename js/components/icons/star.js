@@ -1,6 +1,6 @@
-import { html } from "../lib/preact.js";
+import { html } from "../../lib/preact-bundle.js";
 
-export default function SpaIcon({ height = 24, className = "" }) {
+export default function StarIcon({ height = 24, className = "" }) {
   return html` <svg
     xmlns="http://www.w3.org/2000/svg"
     width="${height}"

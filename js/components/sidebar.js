@@ -1,4 +1,4 @@
-import { html, useState } from "./lib/preact.js";
+import { html, useState } from "../lib/preact-bundle.js";
 
 import ColorsModal from "./colors-modal.js";
 

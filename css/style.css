@@ -99,6 +99,14 @@ small {
   border: 1px solid var(--foreground-color);
 }
 
+.border-2 {
+  border: 2px solid var(--foreground-color);
+}
+
+.border-3 {
+  border: 3px solid var(--foreground-color);
+}
+
 .inner-border {
   box-shadow: inset 0 0 0 1px var(--foreground-color);
 }

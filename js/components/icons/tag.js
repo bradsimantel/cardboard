@@ -1,4 +1,4 @@
-import { html } from "../lib/preact.js";
+import { html } from "../../lib/preact-bundle.js";
 
 export default function TagIcon({ height = 24, className = "" }) {
   return html`

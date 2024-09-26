@@ -1,4 +1,4 @@
-import { html } from "./lib/preact.js";
+import { html } from "../lib/preact-bundle.js";
 
 export default function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;

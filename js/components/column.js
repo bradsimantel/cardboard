@@ -1,19 +1,8 @@
-import { html, useEffect, useRef } from "./lib/preact.js";
-import Sortable from "https://esm.sh/sortablejs@1.15.3";
+import { html, useEffect, useRef } from "../lib/preact-bundle.js";
+import Sortable from "../lib/sortable.js";
 import Card from "./card.js";
 import PlusIcon from "./icons/plus.js";
 import DotsIcon from "./icons/dots.js";
-
-function ColumnIcon({ title }) {
-  switch (title) {
-    case "To Do":
-      return html`<span class="circle me-2 border-dashed"></span>`;
-    case "In Progress":
-      return html`<span class="circle me-2"></span>`;
-    case "Done":
-      return html`<span class="circle me-2 bg-black"></span>`;
-  }
-}
 
 export default function Column({ title, tasks }) {
   const columnRef = useRef(null);
@@ -57,4 +46,15 @@ export default function Column({ title, tasks }) {
       </div>
     </div>
   `;
+}
+
+function ColumnIcon({ title }) {
+  switch (title) {
+    case "To Do":
+      return html`<span class="circle me-2 border-dashed"></span>`;
+    case "In Progress":
+      return html`<span class="circle me-2"></span>`;
+    case "Done":
+      return html`<span class="circle me-2 bg-black"></span>`;
+  }
 }

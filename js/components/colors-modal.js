@@ -1,18 +1,7 @@
-import { html, useState } from "./lib/preact.js";
+import { html, useState } from "../lib/preact-bundle.js";
 import Modal from "./modal.js";
 import CloseIcon from "./icons/close.js";
 import ToneIcon from "./icons/tone.js";
-
-function handleUpdateColors(backgroundColor, foregroundColor) {
-  document.documentElement.style.setProperty(
-    "--background-color",
-    backgroundColor
-  );
-  document.documentElement.style.setProperty(
-    "--foreground-color",
-    foregroundColor
-  );
-}
 
 export default function ColorsModal({ isOpen, onClose }) {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -162,4 +151,15 @@ export default function ColorsModal({ isOpen, onClose }) {
       </div>
     <//>
   `;
+}
+
+function handleUpdateColors(backgroundColor, foregroundColor) {
+  document.documentElement.style.setProperty(
+    "--background-color",
+    backgroundColor
+  );
+  document.documentElement.style.setProperty(
+    "--foreground-color",
+    foregroundColor
+  );
 }

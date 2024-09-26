@@ -4,11 +4,10 @@ A simple, two-color kanban board.
 
 ## Development
 
-Use `caddy file-server` to start a dev server, then go to `http:localhost` to see the app.
+Use `caddy run` to start a dev server, then go to `http://localhost` to see the app.
 
 ## To Do
 
-- [ ] Theme picker
 - [ ] The board should scroll when it overflows
 - [ ] Task modal
 - [ ] Add or delete tasks
