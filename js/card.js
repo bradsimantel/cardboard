@@ -1,4 +1,4 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html } from "./lib/preact.js";
 import TagIcon from "./icons/tag.js";
 import PaperclipIcon from "./icons/paperclip.js";
 import CommentIcon from "./icons/comment.js";

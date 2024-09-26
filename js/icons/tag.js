@@ -1,4 +1,4 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html } from "../lib/preact.js";
 
 export default function TagIcon({ height = 24, className = "" }) {
   return html`

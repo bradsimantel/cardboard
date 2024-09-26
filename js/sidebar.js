@@ -1,7 +1,4 @@
-import {
-  html,
-  useState,
-} from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html, useState } from "./lib/preact.js";
 
 import ColorsModal from "./colors-modal.js";
 

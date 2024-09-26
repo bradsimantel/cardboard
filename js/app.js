@@ -1,4 +1,4 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html } from "./lib/preact.js";
 
 import Sidebar from "./sidebar.js";
 import Column from "./column.js";

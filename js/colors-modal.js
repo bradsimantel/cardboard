@@ -1,7 +1,4 @@
-import {
-  html,
-  useState,
-} from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html, useState } from "./lib/preact.js";
 import Modal from "./modal.js";
 import CloseIcon from "./icons/close.js";
 import ToneIcon from "./icons/tone.js";

@@ -1,8 +1,4 @@
-import {
-  html,
-  useEffect,
-  useRef,
-} from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html, useEffect, useRef } from "./lib/preact.js";
 import Sortable from "https://esm.sh/sortablejs@1.15.3";
 import Card from "./card.js";
 import PlusIcon from "./icons/plus.js";

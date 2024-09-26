@@ -1,7 +1,4 @@
-import {
-  html,
-  render,
-} from "https://unpkg.com/htm/preact/standalone.module.js";
+import { html, render } from "./lib/preact.js";
 import App from "./app.js";
 
 render(html`<${App} />`, document.body);
