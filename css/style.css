@@ -99,8 +99,12 @@ small {
   border: 1px solid var(--foreground-color);
 }
 
-.border-hover:hover {
-  box-shadow: 0 0 0 1px var(--foreground-color);
+.inner-border {
+  box-shadow: inset 0 0 0 1px var(--foreground-color);
+}
+
+.inner-border-hover:hover {
+  box-shadow: inset 0 0 0 1px var(--foreground-color);
 }
 
 .border-top {

@@ -3,7 +3,7 @@ import {
   useState,
 } from "https://unpkg.com/htm/preact/standalone.module.js";
 
-import Modal from "./modal.js";
+import ColorsModal from "./colors-modal.js";
 
 import DownIcon from "./icons/down.js";
 import SearchIcon from "./icons/search.js";
@@ -41,19 +41,19 @@ export default function Sidebar() {
             <${DownIcon} />
           </div>
           <div
-            class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${SearchIcon} height="18" className="me-2" />
             <span>Search</span>
           </div>
           <div
-            class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${BellIcon} height="18" className="me-2" />
             <span>Notifications</span>
           </div>
           <div
-            class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${MenuIcon} height="18" className="me-2" />
             <span>All Tasks</span>
@@ -65,19 +65,19 @@ export default function Sidebar() {
             <${PlusIcon} height="18" />
           </div>
           <div
-            class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${SpaIcon} height="18" className="me-2" />
             <span>Design</span>
           </div>
           <div
-            class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${LeafIcon} height="18" className="me-2" />
             <span>Green Initiatives</span>
           </div>
           <div
-            class="bg-black rounded flex align-items-center p-1 rounded cursor-pointer border-hover"
+            class="bg-black rounded flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
             <${PyramidIcon} height="18" className="me-2" invertColor="true" />
             <span>Active Development</span>
@@ -86,20 +86,20 @@ export default function Sidebar() {
       </div>
       <div class="p-3 border-top">
         <div
-          class="flex align-items-center p-1 rounded cursor-pointer border-hover rounded cursor-pointer border-hover"
+          class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover rounded cursor-pointer inner-border-hover"
           onClick=${openModal}
         >
           <${ToneIcon} height="18" className="me-2" />
           <span>Colors</span>
         </div>
         <div
-          class="flex align-items-center p-1 rounded cursor-pointer border-hover"
+          class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
         >
           <${CogIcon} height="18" className="me-2" />
           <span>Settings</span>
         </div>
       </div>
-      <${Modal} isOpen=${isModalOpen} onClose=${closeModal} />
+      <${ColorsModal} isOpen=${isModalOpen} onClose=${closeModal} />
     </div>
   `;
 }
