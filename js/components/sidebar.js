@@ -1,4 +1,4 @@
-import { html, useState } from "../lib/preact-bundle.js";
+import { html, useState, Link } from "../lib/preact-bundle.js";
 
 import ColorsModal from "./colors-modal.js";
 
@@ -40,19 +40,19 @@ export default function Sidebar() {
           <div
             class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
-            <${SearchIcon} height="18" className="me-2" />
+            <${SearchIcon} height="18" class="me-2" />
             <span>Search</span>
           </div>
           <div
             class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
-            <${BellIcon} height="18" className="me-2" />
+            <${BellIcon} height="18" class="me-2" />
             <span>Notifications</span>
           </div>
           <div
             class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
           >
-            <${MenuIcon} height="18" className="me-2" />
+            <${MenuIcon} height="18" class="me-2" />
             <span>All Tasks</span>
           </div>
         </div>
@@ -61,24 +61,30 @@ export default function Sidebar() {
             <small>BOARDS</small>
             <${PlusIcon} height="18" />
           </div>
-          <div
-            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
+          <${Link}
+            href="/boards/1"
+            activeClass="bg-black"
+            class="flex align-items-center p-1 rounded cursor-pointer text-decoration-none"
           >
-            <${SpaIcon} height="18" className="me-2" />
+            <${SpaIcon} height="18" class="me-2" />
             <span>Design</span>
-          </div>
-          <div
-            class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
+          <//>
+          <${Link}
+            href="/boards/2"
+            activeClass="bg-black"
+            class="flex align-items-center p-1 rounded cursor-pointer text-decoration-none"
           >
-            <${LeafIcon} height="18" className="me-2" />
+            <${LeafIcon} height="18" class="me-2" />
             <span>Green Initiatives</span>
-          </div>
-          <div
-            class="bg-black rounded flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
+          <//>
+          <${Link}
+            href="/boards/3"
+            activeClass="bg-black"
+            class="flex align-items-center p-1 rounded cursor-pointer text-decoration-none"
           >
-            <${PyramidIcon} height="18" className="me-2" invertColor="true" />
+            <${PyramidIcon} height="18" class="me-2" />
             <span>Active Development</span>
-          </div>
+          <//>
         </div>
       </div>
       <div class="p-3 border-top">
@@ -86,13 +92,13 @@ export default function Sidebar() {
           class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover rounded cursor-pointer inner-border-hover"
           onClick=${openModal}
         >
-          <${ToneIcon} height="18" className="me-2" />
+          <${ToneIcon} height="18" class="me-2" />
           <span>Colors</span>
         </div>
         <div
           class="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
         >
-          <${CogIcon} height="18" className="me-2" />
+          <${CogIcon} height="18" class="me-2" />
           <span>Settings</span>
         </div>
       </div>

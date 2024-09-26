@@ -57,6 +57,10 @@ small {
   font-size: 0.75rem;
 }
 
+.text-decoration-none {
+  text-decoration: none;
+}
+
 .text-center {
   text-align: center;
 }
@@ -202,7 +206,7 @@ small {
   fill: var(--foreground-color);
 }
 
-.icon-inverted {
+.bg-black .icon {
   fill: var(--background-color);
 }
 
