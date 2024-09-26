@@ -1,12 +1,12 @@
 import { html } from "../../lib/preact-bundle.js";
 
-export default function CogIcon({ height = 24, className = "" }) {
+export default function CogIcon({ height = 24, classes = "" }) {
   return html` <svg
     xmlns="http://www.w3.org/2000/svg"
     width="${height}"
     height="${height}"
     viewBox="0 0 24 24"
-    className="icon ${className}"
+    class="icon ${classes}"
   >
     <path
       d="M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z"
