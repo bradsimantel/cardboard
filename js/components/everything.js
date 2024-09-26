@@ -10,19 +10,19 @@ import PyramidIcon from "./icons/pyramid.js";
 export default function Everything({ icon, title, tasks }) {
   return html`
     <${Sidebar} />
-    <div class="w-100">
-      <div class="flex justify-content-between border-bottom p-3 px-4">
-        <div class="flex align-items-center">
+    <div className="w-100">
+      <div className="flex justify-content-between border-bottom p-3 px-4">
+        <div className="flex align-items-center">
           <${PyramidIcon} height="18" className="me-2" />
           <span>Active Development</span>
         </div>
-        <div class="flex align-items-center">
+        <div className="flex align-items-center">
           <${StarIcon} height="20" className="me-2" />
           <${LockIcon} height="20" className="me-2" />
           <${DotsIcon} height="24" />
         </div>
       </div>
-      <div class="p-3 flex">
+      <div className="p-3 flex">
         <${Column} title="To Do" tasks=${tasks.filter((t) => t.column === 0)} />
         <${Column}
           title="In Progress"

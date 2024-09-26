@@ -10,35 +10,35 @@ export default function ColorsModal({ isOpen, onClose }) {
   return html`
     <${Modal} isOpen=${isOpen} onClose=${onClose}>
       <div
-        class="p-3 border-bottom flex justify-content-between align-items-center"
+        className="p-3 border-bottom flex justify-content-between align-items-center"
       >
-        <div class="flex align-items-center">
+        <div className="flex align-items-center">
           <${ToneIcon} className="me-2" />
           <span>Colors</span>
         </div>
         <${CloseIcon} />
       </div>
-      <form class="flex">
-        <div class="w-50 p-3 pe-2">
+      <form className="flex">
+        <div className="w-50 p-3 pe-2">
           <label for="backgroundColor" className="d-block mb-1">
             Background
           </label>
           <input
             type="text"
-            class="d-block bg-white rounded border w-100 p-1 px-2"
+            className="d-block bg-white rounded border w-100 p-1 px-2"
             id="backgroundColor"
             name="backgroundColor"
             value=${backgroundColor}
             onInput=${(e) => setBackgroundColor(e.target.value)}
           />
         </div>
-        <div class="w-50 p-3 ps-2">
+        <div className="w-50 p-3 ps-2">
           <label for="foregroundColor" className="d-block mb-1">
             Foreground
           </label>
           <input
             type="text"
-            class="d-block bg-white rounded border w-100 p-1 px-2"
+            className="d-block bg-white rounded border w-100 p-1 px-2"
             id="foregroundColor"
             name="foregroundColor"
             value=${foregroundColor}
@@ -46,11 +46,11 @@ export default function ColorsModal({ isOpen, onClose }) {
           />
         </div>
       </form>
-      <div class="p-3 pt-0 mb-2">
-        <span class="d-block mb-1">Suggested Combinations</span>
-        <div class="flex mb-2">
+      <div className="p-3 pt-0 mb-2">
+        <span className="d-block mb-1">Suggested Combinations</span>
+        <div className="flex mb-2">
           <div
-            class=${`w-33 text-center p-2 rounded border ${
+            className=${`w-33 text-center p-2 rounded border ${
               backgroundColor === "#ffffff" && foregroundColor === "#000000"
                 ? "inner-border"
                 : ""
@@ -64,7 +64,7 @@ export default function ColorsModal({ isOpen, onClose }) {
             White/Black
           </div>
           <div
-            class=${`w-33 text-center p-2 rounded border ms-2 ${
+            className=${`w-33 text-center p-2 rounded border ms-2 ${
               backgroundColor === "#000000" && foregroundColor === "#ffffff"
                 ? "inner-border"
                 : ""
@@ -78,7 +78,7 @@ export default function ColorsModal({ isOpen, onClose }) {
             Black/White
           </div>
           <div
-            class=${`w-33 text-center p-2 rounded border ms-2 ${
+            className=${`w-33 text-center p-2 rounded border ms-2 ${
               backgroundColor === "#000080" && foregroundColor === "#b4cde2"
                 ? "inner-border"
                 : ""
@@ -92,9 +92,9 @@ export default function ColorsModal({ isOpen, onClose }) {
             Blue/Blue
           </div>
         </div>
-        <div class="flex">
+        <div className="flex">
           <div
-            class=${`w-33 text-center p-2 rounded border ${
+            className=${`w-33 text-center p-2 rounded border ${
               backgroundColor === "#5f4b8b" && foregroundColor === "#e69a8d"
                 ? "inner-border"
                 : ""
@@ -108,7 +108,7 @@ export default function ColorsModal({ isOpen, onClose }) {
             Purple/Peach
           </div>
           <div
-            class=${`w-33 text-center p-2 rounded border ms-2 ${
+            className=${`w-33 text-center p-2 rounded border ms-2 ${
               backgroundColor === "#000000" && foregroundColor === "#1DB954"
                 ? "inner-border"
                 : ""
@@ -122,7 +122,7 @@ export default function ColorsModal({ isOpen, onClose }) {
             Black/Green
           </div>
           <div
-            class=${`w-33 text-center p-2 rounded border ms-2 ${
+            className=${`w-33 text-center p-2 rounded border ms-2 ${
               backgroundColor === "#f0e9eb" && foregroundColor === "#7a0b45"
                 ? "inner-border"
                 : ""
@@ -137,10 +137,12 @@ export default function ColorsModal({ isOpen, onClose }) {
           </div>
         </div>
       </div>
-      <div class="flex justify-content-between p-3 border-top">
-        <span class="border rounded px-3 py-1" onClick=${onClose}> Close </span>
+      <div className="flex justify-content-between p-3 border-top">
+        <span className="border rounded px-3 py-1" onClick=${onClose}>
+          Close
+        </span>
         <span
-          class="bg-black rounded px-3 py-1"
+          className="bg-black rounded px-3 py-1"
           onClick=${() => {
             handleUpdateColors(backgroundColor, foregroundColor);
             onClose();

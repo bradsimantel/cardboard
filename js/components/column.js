@@ -20,18 +20,18 @@ export default function Column({ title, tasks }) {
   }, []);
 
   return html`
-    <div class="w-33">
-      <div class="p-3 pb-0 flex align-items-center justify-content-between">
-        <div class="flex">
+    <div className="w-33">
+      <div className="p-3 pb-0 flex align-items-center justify-content-between">
+        <div className="flex">
           <${ColumnIcon} title=${title} />
           <span>${title}</span>
         </div>
-        <div class="flex">
+        <div className="flex">
           <${PlusIcon} alt="plus" />
           <${DotsIcon} alt="dots" />
         </div>
       </div>
-      <div class="column" ref=${columnRef}>
+      <div className="column" ref=${columnRef}>
         ${tasks.map(
           (task) => html`
             <${Card}
@@ -51,10 +51,10 @@ export default function Column({ title, tasks }) {
 function ColumnIcon({ title }) {
   switch (title) {
     case "To Do":
-      return html`<span class="circle me-2 border-dashed"></span>`;
+      return html`<span className="circle me-2 border-dashed"></span>`;
     case "In Progress":
-      return html`<span class="circle me-2"></span>`;
+      return html`<span className="circle me-2"></span>`;
     case "Done":
-      return html`<span class="circle me-2 bg-black"></span>`;
+      return html`<span className="circle me-2 bg-black"></span>`;
   }
 }

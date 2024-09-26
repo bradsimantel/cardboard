@@ -51,6 +51,12 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Links */
+
+a {
+  color: var(--foreground-color);
+}
+
 /* Typography */
 
 small {

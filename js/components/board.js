@@ -32,19 +32,19 @@ export default function Board({ boardId }) {
 
   return html`
     <${Sidebar} />
-    <div class="w-100">
-      <div class="flex justify-content-between border-bottom p-3 px-4">
-        <div class="flex align-items-center">
-          <${PyramidIcon} height="18" class="me-2" />
+    <div className="w-100">
+      <div className="flex justify-content-between border-bottom p-3 px-4">
+        <div className="flex align-items-center">
+          <${PyramidIcon} height="18" className="me-2" />
           <span>${title}</span>
         </div>
-        <div class="flex align-items-center">
-          <${StarIcon} height="20" class="me-2" />
-          <${LockIcon} height="20" class="me-2" />
+        <div className="flex align-items-center">
+          <${StarIcon} height="20" className="me-2" />
+          <${LockIcon} height="20" className="me-2" />
           <${DotsIcon} height="24" />
         </div>
       </div>
-      <div class="p-3 flex">
+      <div className="p-3 flex">
         ${columns.map(
           (column, index) => html`
             <${Column}
