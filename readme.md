@@ -14,11 +14,10 @@ Use `caddy run` to start a dev server, then go to `http://localhost` to see the 
 - [ ] Add, rename, or remove columns
 - [ ] Add, rename, or remove boards
 - [ ] Subtasks as checkboxes
-- [ ] Use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
+- [ ] Decide if I need full SortableJS or can drop default plugins
+- [ ] Or use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
 
 
-how do methods work? post vs get?
-is there middleware?
-esbuild
-development db?
-are migrations run on pages deploy, or only manually?
+- how do methods work? post vs get?
+- development db?
+- are migrations run on pages deploy, or only manually?
