@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "wrangler pages dev",
     "build": "esbuild src/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment",
-    "migrate": "wrangler d1 migrations apply <DATABASE_NAME> [OPTIONS]"
+    "migrate": "wrangler d1 migrations apply DB",
+    "watch": "esbuild src/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment --watch"
   },
   "devDependencies": {
     "esbuild": "^0.24.0",
