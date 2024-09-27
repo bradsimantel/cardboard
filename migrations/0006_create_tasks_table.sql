@@ -1,4 +1,4 @@
-CREATE_TABLE tasks (
+CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,
   column_id INT NOT NULL REFERENCES columns(id),
   name VARCHAR(255) NOT NULL,
