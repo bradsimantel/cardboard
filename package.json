@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "build": "esbuild src/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment",
+    "migrate": "wrangler d1 migrations apply <DATABASE_NAME> [OPTIONS]"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "wrangler": "^3.78.10"
+  },
+  "dependencies": {
+    "preact": "^10.24.1",
+    "preact-router": "^4.1.2",
+    "sortablejs": "^1.15.3"
+  }
+}

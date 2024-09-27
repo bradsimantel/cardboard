@@ -1,0 +1,6 @@
+CREATE TABLE boards (
+  id SERIAL PRIMARY KEY,
+  organization_id INT NOT NULL REFERENCES organizations(id),
+  name VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -1,0 +1,7 @@
+CREATE TABLE columns (
+  id SERIAL PRIMARY KEY,
+  board_id INT NOT NULL REFERENCES boards(id),
+  name VARCHAR(255) NOT NULL,
+  position INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

@@ -15,3 +15,10 @@ Use `caddy run` to start a dev server, then go to `http://localhost` to see the 
 - [ ] Add, rename, or remove boards
 - [ ] Subtasks as checkboxes
 - [ ] Use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
+
+
+how do methods work? post vs get?
+is there middleware?
+esbuild
+development db?
+are migrations run on pages deploy, or only manually?
