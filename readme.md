@@ -21,3 +21,5 @@ Use `caddy run` to start a dev server, then go to `http://localhost` to see the 
 - how do methods work? post vs get?
 - development db?
 - are migrations run on pages deploy, or only manually?
+- query inspo: https://github.com/aminroosta/sqlite-cloudflare-d1/blob/master/src/index.ts
+- more query inspo: https://developers.cloudflare.com/d1/build-with-d1/d1-client-api/#await-stmtfirstcolumn
