@@ -81,17 +81,18 @@ export default function Sidebar() {
             </Link>
           </div>
         </div>
-        <div className="p-3 border-top"></div>
-        <div
-          className="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
-          onClick={openModal}
-        >
-          <ToneIcon height="18" className="me-2" />
-          <span>Colors</span>
-        </div>
-        <div className="flex align-items-center p-1 rounded cursor-pointer inner-border-hover">
-          <CogIcon height="18" className="me-2" />
-          <span>Settings</span>
+        <div className="p-3 border-top">
+          <div
+            className="flex align-items-center p-1 rounded cursor-pointer inner-border-hover"
+            onClick={openModal}
+          >
+            <ToneIcon height="18" className="me-2" />
+            <span>Colors</span>
+          </div>
+          <div className="flex align-items-center p-1 rounded cursor-pointer inner-border-hover">
+            <CogIcon height="18" className="me-2" />
+            <span>Settings</span>
+          </div>
         </div>
       </div>
       <ColorsModal isOpen={isModalOpen} onClose={closeModal} />
