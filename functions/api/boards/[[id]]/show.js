@@ -1,10 +1,10 @@
 export async function onRequest(context) {
   // Get the D1 database binding
   const { DB } = context.env;
-  const { id } = context.params; // Extract the board_id from the URL path
+  const id = Number(context.params.id); // Ensure id is a number
 
   try {
-    // Execute the SQL query to fetch all tasks for the specified board_id
+    // Execute the SQL query to fetch all tasks for the specified id
     const { results } = await DB.prepare(
       "SELECT * FROM tasks WHERE board_id = ? ORDER BY created_at DESC"
     )
@@ -16,6 +16,8 @@ export async function onRequest(context) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
+    console.log(error);
+
     // If there's an error, return a 500 Internal Server Error
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,

@@ -1,6 +1,8 @@
 CREATE TABLE tasks (
-  id SERIAL PRIMARY KEY,
-  column_id INT NOT NULL REFERENCES columns(id),
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  organization_id INT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+  board_id INT NOT NULL REFERENCES boards(id) ON DELETE CASCADE,
+  column_id INT NOT NULL REFERENCES columns(id) ON DELETE CASCADE,
   name VARCHAR(255) NOT NULL,
   description TEXT,
   position INT NOT NULL,
