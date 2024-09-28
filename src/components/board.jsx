@@ -16,6 +16,8 @@ export default function Board({ boardId }) {
   useEffect(async () => {
     try {
       const board = await api.getBoard({ id: boardId });
+      // const res = await fetch(`/api/boards/${boardId}`);
+      // const board = await res.json();
       setBoard(board);
     } catch (error) {
       console.error(error);

@@ -1,10 +1,10 @@
-# Stark
+# Cardboard
 
-A simple, two-color kanban board.
+A simple, themeable, duochromatic kanban board.
 
 ## Development
 
-Use `caddy run` to start a dev server, then go to `http://localhost` to see the app.
+Use `npm run dev` to start both `wrangler` and `esbuild`.
 
 ## To Do
 
@@ -18,8 +18,6 @@ Use `caddy run` to start a dev server, then go to `http://localhost` to see the 
 - [ ] Or use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
 
 
-- how do methods work? post vs get?
-- development db?
 - are migrations run on pages deploy, or only manually?
 - query inspo: https://github.com/aminroosta/sqlite-cloudflare-d1/blob/master/src/index.ts
 - more query inspo: https://developers.cloudflare.com/d1/build-with-d1/d1-client-api/#await-stmtfirstcolumn

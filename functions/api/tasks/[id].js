@@ -3,29 +3,16 @@ export async function onRequestGet(context) {
   try {
     const { DB } = context.env;
     const id = Number(context.params.id);
-    const boardSql = "SELECT * FROM boards WHERE id = ?";
-    const board = await DB.prepare(boardSql).bind(id).first();
-    const colSql = "SELECT * FROM columns WHERE board_id = ?";
-    const { results: columns } = await DB.prepare(colSql).bind(id).all();
-    const taskSql = "SELECT * FROM tasks WHERE board_id = ?";
-    const { results: tasks } = await DB.prepare(taskSql).bind(id).all();
+    const sql = "SELECT * FROM tasks WHERE id = ?";
+    const task = await DB.prepare(sql).bind(id).first();
 
-    if (!board || !columns || !tasks) {
+    if (!task) {
       return new Response(null, {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      console.log({ board, columns, tasks });
-      const hydratedBoard = {
-        ...board,
-        columns: columns.map((column) => ({
-          ...column,
-          tasks: tasks.filter((task) => task.column_id === column.id),
-        })),
-      };
-
-      return new Response(JSON.stringify(hydratedBoard), {
+      return new Response(JSON.stringify(task), {
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -43,16 +30,16 @@ export async function onRequestPut(context) {
     const { DB } = context.env;
     const { name } = await context.request.json();
     const id = Number(context.params.id);
-    const sql = "UPDATE boards SET name = ? WHERE id = ? RETURNING *";
-    const board = await DB.prepare(sql).bind(name, id).first();
+    const sql = "UPDATE tasks SET name = ? WHERE id = ? RETURNING *";
+    const task = await DB.prepare(sql).bind(name, id).first();
 
-    if (!board) {
+    if (!task) {
       return new Response(null, {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      return new Response(JSON.stringify(board), {
+      return new Response(JSON.stringify(task), {
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -69,7 +56,7 @@ export async function onRequestDelete(context) {
   try {
     const { DB } = context.env;
     const id = Number(context.params.id);
-    const sql = "DELETE FROM boards WHERE id = ?";
+    const sql = "DELETE FROM tasks WHERE id = ?";
 
     await DB.prepare(sql).bind(id).run();
     return new Response(null, { status: 204 });

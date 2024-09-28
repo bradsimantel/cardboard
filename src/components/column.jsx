@@ -12,7 +12,7 @@ export default function Column({ title, tasks }) {
     if (columnRef.current) {
       new Sortable(columnRef.current, {
         group: "shared",
-        animation: 0,
+        animation: 150,
         forceFallback: true,
         fallbackClass: "dragged-item",
         ghostClass: "ghost-class",
