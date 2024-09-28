@@ -1,10 +1,10 @@
 import { h, Fragment } from "preact";
-import Sidebar from "./sidebar";
-import Column from "./column";
-import LockIcon from "./icons/lock";
-import StarIcon from "./icons/star";
-import DotsIcon from "./icons/dots";
-import PyramidIcon from "./icons/pyramid";
+import Sidebar from "../components/sidebar";
+import Column from "../components/column";
+import LockIcon from "../components/icons/lock";
+import StarIcon from "../components/icons/star";
+import DotsIcon from "../components/icons/dots";
+import PyramidIcon from "../components/icons/pyramid";
 
 export default function Everything({ icon, title, tasks }) {
   return (
