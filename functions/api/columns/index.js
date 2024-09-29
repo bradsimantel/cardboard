@@ -20,10 +20,13 @@ export async function onRequestGet(context) {
 export const onRequestPost = async (context) => {
   try {
     const { DB } = context.env;
-    const { organizationId, name } = await context.request.json();
+    const { organizationId, boardId, name, position } =
+      await context.request.json();
     const sql =
-      "INSERT INTO columns (organization_id, name) VALUES (?, ?) RETURNING *";
-    const column = await DB.prepare(sql).bind(organizationId, name).first();
+      "INSERT INTO columns (organization_id, board_id, name, position) VALUES (?, ?, ?, ?) RETURNING *";
+    const column = await DB.prepare(sql)
+      .bind(organizationId, boardId, name, position)
+      .first();
 
     return new Response(JSON.stringify(column), {
       status: 201,
