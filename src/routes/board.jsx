@@ -33,7 +33,7 @@ export default function Board({ boardId }) {
   const { title, columns } = board;
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full overflow-hidden">
       <Sidebar />
       <div className="w-full flex flex-col h-full">
         <div className="flex justify-between border-b p-3 px-4">
@@ -47,7 +47,7 @@ export default function Board({ boardId }) {
             <DotsIcon height="24" />
           </div>
         </div>
-        <div className="p-3 flex flex-grow">
+        <div className="p-3 flex flex-grow overflow-auto">
           {columns.map((column, index) => (
             <Column key={index} title={column.title} tasks={column.tasks} />
           ))}
