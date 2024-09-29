@@ -7,7 +7,7 @@ export default function MenuIcon({ height = 24, className = "" }) {
       width={height}
       height={height}
       viewBox="0 0 24 24"
-      className={`fill-black ${className}`}
+      className={`fill-black group-[.bg-black]:fill-white ${className}`}
     >
       <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
     </svg>

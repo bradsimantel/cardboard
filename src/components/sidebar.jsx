@@ -54,7 +54,7 @@ export default function Sidebar() {
             </div>
             <Link
               href="/boards/1"
-              activeClass="bg-black text-white"
+              activeClass="bg-black text-white group"
               className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
             >
               <SpaIcon height="18" className="mr-2" />
@@ -62,7 +62,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/boards/2"
-              activeClass="bg-black text-white"
+              activeClass="bg-black text-white group"
               className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
             >
               <LeafIcon height="18" className="mr-2" />
@@ -70,7 +70,7 @@ export default function Sidebar() {
             </Link>
             <Link
               href="/boards/3"
-              activeClass="bg-black text-white"
+              activeClass="bg-black text-white group"
               className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
             >
               <PyramidIcon height="18" className="mr-2" />
