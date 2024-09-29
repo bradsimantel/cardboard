@@ -21,13 +21,13 @@ export default function Column({ title, tasks }) {
   }, []);
 
   return (
-    <div className="w-33">
-      <div className="p-3 pb-0 flex align-items-center justify-content-between">
-        <div className="flex">
+    <div className="w-1/3">
+      <div className="p-3 pb-0 flex items-center justify-between">
+        <div className="flex items-center">
           <ColumnIcon title={title} />
           <span>{title}</span>
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           <PlusIcon alt="plus" />
           <DotsIcon alt="dots" />
         </div>
@@ -35,6 +35,7 @@ export default function Column({ title, tasks }) {
       <div className="column" ref={columnRef}>
         {tasks.map((task) => (
           <Card
+            key={task.title}
             category={task.category}
             title={task.title}
             assignee={task.assignee}
@@ -50,11 +51,13 @@ export default function Column({ title, tasks }) {
 function ColumnIcon({ title }) {
   switch (title) {
     case "To Do":
-      return <span className="circle me-2 border-dashed"></span>;
+      return (
+        <span className="circle mr-2 border-dashed border-2 border-gray-400"></span>
+      );
     case "In Progress":
-      return <span className="circle me-2"></span>;
+      return <span className="circle mr-2 border-2 border-gray-400"></span>;
     case "Done":
-      return <span className="circle me-2 bg-black"></span>;
+      return <span className="circle mr-2 bg-black"></span>;
     default:
       return null;
   }

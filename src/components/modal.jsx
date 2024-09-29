@@ -4,32 +4,13 @@ export default function Modal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
   return (
-    <div
-      className="bg-striped-outer"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 9999,
-      }}
-    >
+    <div className="z-10 fixed inset-0 modal-background-striped-outer">
       <div
-        className="flex justify-content-center align-items-center bg-striped-inner"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 9999,
-        }}
+        className="z-10 fixed inset-0 flex items-center justify-center modal-background-striped-inner"
         onClick={onClose}
       >
         <div
-          className="modal bg-white rounded border"
-          style={{ width: "30rem" }}
+          className="z-50 bg-white border rounded-lg w-96"
           onClick={(e) => e.stopPropagation()}
         >
           {children}

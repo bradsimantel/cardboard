@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-black: #000;
+    --color-white: #fff;
+  }
+}
+
+/* SortableJS styling for the element about to be dropped */
+
+.card {
+  user-select: none;
+}
+
+.ghost-class {
+  border-style: dashed;
+}
+
+.ghost-class * {
+  visibility: hidden;
+}
+
+.dragged-item {
+  opacity: 1 !important;
+  transform: rotate(5deg);
+}
+
+/* Modal styling */
+
+.modal-background-striped-outer {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--color-black) 0px,
+    var(--color-black) 1px,
+    transparent 2px,
+    transparent 9px
+  );
+}
+
+.modal-background-striped-inner {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-white) 0px,
+    var(--color-white) 1px,
+    transparent 3px,
+    transparent 10px
+  );
+}

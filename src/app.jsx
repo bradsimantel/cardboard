@@ -7,11 +7,13 @@ import Redirector from "./routes/redirector";
 
 export default function App() {
   return (
-    <Router>
-      <Everything path="/everything" />
-      <Board path="/boards/:boardId" />
-      <Redirector default />
-    </Router>
+    <div className="bg-white text-black">
+      <Router>
+        <Everything path="/everything" />
+        <Board path="/boards/:boardId" />
+        <Redirector default />
+      </Router>
+    </div>
   );
 }
 

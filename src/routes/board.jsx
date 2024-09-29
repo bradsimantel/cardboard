@@ -33,26 +33,26 @@ export default function Board({ boardId }) {
   const { title, columns } = board;
 
   return (
-    <>
+    <div className="flex h-full">
       <Sidebar />
-      <div className="w-100">
-        <div className="flex justify-content-between border-bottom p-3 px-4">
-          <div className="flex align-items-center">
-            <PyramidIcon height="18" className="me-2" />
+      <div className="w-full flex flex-col h-full">
+        <div className="flex justify-between border-b p-3 px-4">
+          <div className="flex items-center">
+            <PyramidIcon height="18" className="mr-2" />
             <span>{title}</span>
           </div>
-          <div className="flex align-items-center">
-            <StarIcon height="20" className="me-2" />
-            <LockIcon height="20" className="me-2" />
+          <div className="flex items-center">
+            <StarIcon height="20" className="mr-2" />
+            <LockIcon height="20" className="mr-2" />
             <DotsIcon height="24" />
           </div>
         </div>
-        <div className="p-3 flex">
+        <div className="p-3 flex flex-grow">
           {columns.map((column, index) => (
             <Column key={index} title={column.title} tasks={column.tasks} />
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
