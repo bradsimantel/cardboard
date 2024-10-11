@@ -2,8 +2,7 @@ import { h } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 import Sortable from "sortablejs";
 import Card from "./card";
-import PlusIcon from "./icons/plus";
-import DotsIcon from "./icons/dots";
+import Icon from "./icon";
 
 export default function Column({ title, tasks }) {
   const columnRef = useRef(null);
@@ -25,8 +24,8 @@ export default function Column({ title, tasks }) {
       <div className="p-3 pb-0 flex items-center justify-between">
         <span>{title}</span>
         <div className="flex items-center">
-          <PlusIcon alt="plus" />
-          <DotsIcon alt="dots" />
+          <Icon type="plus" />
+          <Icon type="dots" />
         </div>
       </div>
       <div className="column" ref={columnRef}>

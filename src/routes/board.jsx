@@ -4,10 +4,7 @@ import * as api from "../api";
 
 import Sidebar from "../components/sidebar";
 import Column from "../components/column";
-import LockIcon from "../components/icons/lock";
-import StarIcon from "../components/icons/star";
-import DotsIcon from "../components/icons/dots";
-import PyramidIcon from "../components/icons/pyramid";
+import Icon from "../components/icon";
 
 export default function Board({ boardId }) {
   const [loading, setLoading] = useState(true);
@@ -38,13 +35,13 @@ export default function Board({ boardId }) {
       <div className="w-full flex flex-col h-full">
         <div className="flex justify-between border-b p-3 px-4">
           <div className="flex items-center">
-            <PyramidIcon height="18" className="mr-2" />
+            <Icon type="pyramid" height="18" className="mr-2" />
             <span>{title}</span>
           </div>
           <div className="flex items-center">
-            <StarIcon height="20" className="mr-2" />
-            <LockIcon height="20" className="mr-2" />
-            <DotsIcon height="24" />
+            <Icon type="star" height="20" className="mr-2" />
+            <Icon type="lock" height="20" className="mr-2" />
+            <Icon type="dots" height="24" />
           </div>
         </div>
         <div className="p-3 flex flex-grow overflow-auto">

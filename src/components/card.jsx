@@ -1,7 +1,5 @@
 import { h } from "preact";
-import TagIcon from "./icons/tag";
-import PaperclipIcon from "./icons/paperclip";
-import CommentIcon from "./icons/comment";
+import Icon from "./icon";
 
 export default function Card({
   category = "",
@@ -28,15 +26,15 @@ export default function Card({
           <small>{initials}</small>
         </div>
         <div className="flex items-center mr-2">
-          <TagIcon height="18" />
+          <Icon type="tag" height="18" />
           <span className="ml-1">{tags.length}</span>
         </div>
         <div className="flex items-center mr-2">
-          <PaperclipIcon height="18" />
+          <Icon type="paperclip" height="18" />
           <span className="ml-1">{attachments.length}</span>
         </div>
         <div className="flex items-center">
-          <CommentIcon height="18" />
+          <Icon type="comment" height="18" />
           <span className="ml-1">{comments.length}</span>
         </div>
       </div>

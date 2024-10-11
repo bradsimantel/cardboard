@@ -3,16 +3,7 @@ import { useState } from "preact/hooks";
 import { Link } from "preact-router/match";
 
 import ColorsModal from "./colors-modal";
-import DownIcon from "./icons/down";
-import SearchIcon from "./icons/search";
-import BellIcon from "./icons/bell";
-import MenuIcon from "./icons/menu";
-import PlusIcon from "./icons/plus";
-import SpaIcon from "./icons/spa";
-import LeafIcon from "./icons/leaf";
-import PyramidIcon from "./icons/pyramid";
-import ToneIcon from "./icons/tone";
-import CogIcon from "./icons/cog";
+import Icon from "./icon";
 
 export default function Sidebar() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -32,32 +23,32 @@ export default function Sidebar() {
                 </div>
                 <span>Playful Industries</span>
               </div>
-              <DownIcon />
+              <Icon type="down" />
             </div>
             <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
-              <SearchIcon height="18" className="mr-2" />
+              <Icon type="search" height="18" className="mr-2" />
               <span>Search</span>
             </div>
             <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
-              <BellIcon height="18" className="mr-2" />
+              <Icon type="bell" height="18" className="mr-2" />
               <span>Notifications</span>
             </div>
             <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
-              <MenuIcon height="18" className="mr-2" />
+              <Icon type="menu" height="18" className="mr-2" />
               <span>All Tasks</span>
             </div>
           </div>
           <div className="p-3">
             <div className="flex justify-between items-center mb-2">
               <small>BOARDS</small>
-              <PlusIcon height="18" />
+              <Icon type="plus" height="18" />
             </div>
             <Link
               href="/boards/1"
               activeClass="bg-black text-white group"
               className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
-              <SpaIcon height="18" className="mr-2" />
+              <Icon type="spa" height="18" className="mr-2" />
               <span>Design</span>
             </Link>
             <Link
@@ -65,7 +56,7 @@ export default function Sidebar() {
               activeClass="bg-black text-white group"
               className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
-              <LeafIcon height="18" className="mr-2" />
+              <Icon type="leaf" height="18" className="mr-2" />
               <span>Green Initiatives</span>
             </Link>
             <Link
@@ -73,7 +64,7 @@ export default function Sidebar() {
               activeClass="bg-black text-white group"
               className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
-              <PyramidIcon height="18" className="mr-2" />
+              <Icon type="pyramid" height="18" className="mr-2" />
               <span>Active Development</span>
             </Link>
           </div>
@@ -83,11 +74,11 @@ export default function Sidebar() {
             className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group"
             onClick={openModal}
           >
-            <ToneIcon height="18" className="mr-2" />
+            <Icon type="tone" height="18" className="mr-2" />
             <span>Colors</span>
           </div>
           <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
-            <CogIcon height="18" className="mr-2" />
+            <Icon type="cog" height="18" className="mr-2" />
             <span>Settings</span>
           </div>
         </div>

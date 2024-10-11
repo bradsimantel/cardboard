@@ -1,8 +1,7 @@
 import { h } from "preact";
 import { useState } from "preact/hooks";
 import Modal from "./modal";
-import CloseIcon from "./icons/close";
-import ToneIcon from "./icons/tone";
+import Icon from "./icon";
 
 export default function ColorsModal({ isOpen, onClose }) {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -29,10 +28,10 @@ export default function ColorsModal({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="p-3 border-b flex justify-between items-center">
         <div className="flex items-center">
-          <ToneIcon className="mr-2" />
+          <Icon type="thing" className="mr-2" />
           <span>Colors</span>
         </div>
-        <CloseIcon />
+        <Icon type="close" />
       </div>
       <form className="flex">
         <div className="w-1/2 p-3 pr-2">
