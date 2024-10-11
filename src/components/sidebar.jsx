@@ -34,15 +34,15 @@ export default function Sidebar() {
               </div>
               <DownIcon />
             </div>
-            <div className="flex items-center p-1 rounded cursor-pointer hover:border hover:border-gray-300">
+            <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
               <SearchIcon height="18" className="mr-2" />
               <span>Search</span>
             </div>
-            <div className="flex items-center p-1 rounded cursor-pointer hover:border hover:border-gray-300">
+            <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
               <BellIcon height="18" className="mr-2" />
               <span>Notifications</span>
             </div>
-            <div className="flex items-center p-1 rounded cursor-pointer hover:border hover:border-gray-300">
+            <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
               <MenuIcon height="18" className="mr-2" />
               <span>All Tasks</span>
             </div>
@@ -55,7 +55,7 @@ export default function Sidebar() {
             <Link
               href="/boards/1"
               activeClass="bg-black text-white group"
-              className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
+              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
               <SpaIcon height="18" className="mr-2" />
               <span>Design</span>
@@ -63,7 +63,7 @@ export default function Sidebar() {
             <Link
               href="/boards/2"
               activeClass="bg-black text-white group"
-              className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
+              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
               <LeafIcon height="18" className="mr-2" />
               <span>Green Initiatives</span>
@@ -71,7 +71,7 @@ export default function Sidebar() {
             <Link
               href="/boards/3"
               activeClass="bg-black text-white group"
-              className="flex items-center p-1 rounded-lg cursor-pointer no-underline"
+              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
             >
               <PyramidIcon height="18" className="mr-2" />
               <span>Active Development</span>
@@ -80,13 +80,13 @@ export default function Sidebar() {
         </div>
         <div className="p-3 border-t">
           <div
-            className="flex items-center p-1 rounded cursor-pointer hover:border hover:border-gray-300"
+            className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group"
             onClick={openModal}
           >
             <ToneIcon height="18" className="mr-2" />
             <span>Colors</span>
           </div>
-          <div className="flex items-center p-1 rounded cursor-pointer hover:border hover:border-gray-300">
+          <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
             <CogIcon height="18" className="mr-2" />
             <span>Settings</span>
           </div>
