@@ -23,10 +23,7 @@ export default function Column({ title, tasks }) {
   return (
     <div className="w-1/3">
       <div className="p-3 pb-0 flex items-center justify-between">
-        <div className="flex items-center">
-          <ColumnIcon title={title} />
-          <span>{title}</span>
-        </div>
+        <span>{title}</span>
         <div className="flex items-center">
           <PlusIcon alt="plus" />
           <DotsIcon alt="dots" />
@@ -46,19 +43,4 @@ export default function Column({ title, tasks }) {
       </div>
     </div>
   );
-}
-
-function ColumnIcon({ title }) {
-  switch (title) {
-    case "To Do":
-      return (
-        <span className="circle mr-2 border-dashed border-2 border-gray-400"></span>
-      );
-    case "In Progress":
-      return <span className="circle mr-2 border-2 border-gray-400"></span>;
-    case "Done":
-      return <span className="circle mr-2 bg-black"></span>;
-    default:
-      return null;
-  }
 }
