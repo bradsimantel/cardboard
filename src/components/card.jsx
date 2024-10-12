@@ -3,7 +3,7 @@ import Icon from "./icon";
 
 export default function Card({
   title = "",
-  category = "", // TODO: Switch this to object
+  category = {},
   assignee = {},
   tags = [],
   comments = [],
@@ -20,7 +20,7 @@ export default function Card({
   return (
     <div className="card border cursor-pointer rounded-lg p-2 m-3 bg-white">
       <div>
-        <small>{category.toUpperCase()}</small>
+        <small>{category.name.toUpperCase()}</small>
       </div>
       <div className="my-2">{title}</div>
       <div className="flex items-center">
