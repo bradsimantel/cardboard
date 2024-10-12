@@ -33,10 +33,10 @@ INSERT INTO categories (organization_id, name) VALUES
 
 -- Insert cards for the first board
 INSERT INTO cards (organization_id, board_id, column_id, name, description, position, assignee_id) VALUES
-(1, 1, 1, 'Card 1', 'This is the first card', 1, 1),
-(1, 1, 1, 'Card 2', 'This is the second card', 2, 1),
-(1, 1, 2, 'Card 3', 'This is the third card', 1, null),
-(1, 1, 3, 'Card 4', 'This is the fourth card', 1, null);
+(1, 1, 1, 'Card 1', 'This is the first card', 0, 1),
+(1, 1, 1, 'Card 2', 'This is the second card', 1, 1),
+(1, 1, 2, 'Card 3', 'This is the third card', 0, null),
+(1, 1, 3, 'Card 4', 'This is the fourth card', 0, null);
 
 -- -- Insert card categories
 INSERT INTO card_categories (organization_id, card_id, category_id) VALUES

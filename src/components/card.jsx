@@ -2,6 +2,7 @@ import { h } from "preact";
 import Icon from "./icon";
 
 export default function Card({
+  id = null,
   title = "",
   category = {},
   assignee = {},
@@ -18,7 +19,10 @@ export default function Card({
         .toUpperCase()
     : "";
   return (
-    <div className="card border cursor-pointer rounded-lg p-2 m-3 bg-white">
+    <div
+      className="card border cursor-pointer rounded-lg p-2 m-3 bg-white"
+      data-card-id={id}
+    >
       <div>
         <small>{category.name.toUpperCase()}</small>
       </div>

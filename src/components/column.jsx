@@ -4,7 +4,7 @@ import Sortable from "sortablejs";
 import Card from "./card";
 import Icon from "./icon";
 
-export default function Column({ name, cards }) {
+export default function Column({ id, name, cards }) {
   const columnRef = useRef(null);
 
   useEffect(() => {
@@ -15,9 +15,30 @@ export default function Column({ name, cards }) {
         forceFallback: true,
         fallbackClass: "dragged-item",
         ghostClass: "ghost-class",
+        onEnd: (evt) => {
+          const cardId = Number(evt.item.dataset.cardId);
+          const sourceColumnId = id;
+          const sourcePosition = evt.oldIndex;
+          const destinationColumnId = Number(evt.to.dataset.columnId);
+          const destinationPosition = evt.newIndex;
+
+          fetch("/api/boards/1/reorder", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              cardId,
+              sourceColumnId,
+              sourcePosition,
+              destinationColumnId,
+              destinationPosition,
+            }),
+          });
+        },
       });
     }
-  }, []);
+  }, [id]);
 
   return (
     <div className="w-1/3">
@@ -28,10 +49,11 @@ export default function Column({ name, cards }) {
           <Icon type="dots" />
         </div>
       </div>
-      <div className="column" ref={columnRef}>
+      <div className="column" ref={columnRef} data-column-id={id}>
         {cards.map((card) => (
           <Card
-            key={card.name}
+            key={card.id}
+            id={card.id}
             category={card.category}
             title={card.name}
             assignee={card.assignee}
