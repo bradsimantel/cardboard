@@ -1,6 +1,9 @@
 import { h } from "preact";
 import { useState } from "preact/hooks";
 import Modal from "./modal";
+import TextInput from "./text-input";
+import Button from "./button";
+import ButtonOutline from "./button-outline";
 import Icon from "./icon";
 
 export default function ColorsModal({ isOpen, onClose }) {
@@ -10,8 +13,10 @@ export default function ColorsModal({ isOpen, onClose }) {
   const Preset = ({ name, bg, fg }) => {
     return (
       <div
-        className={`w-1/3 text-center p-2 rounded border ${
-          backgroundColor === bg && foregroundColor === fg ? "border-2" : ""
+        className={`w-1/3 text-center p-2 m-1 rounded cursor-pointer ${
+          backgroundColor === bg && foregroundColor === fg
+            ? "ring-2 ring-black"
+            : "border"
         }`}
         onClick={() => {
           setBackgroundColor(bg);
@@ -33,63 +38,62 @@ export default function ColorsModal({ isOpen, onClose }) {
         </div>
         <Icon type="close" />
       </div>
-      <form className="flex">
-        <div className="w-1/2 p-3 pr-2">
+      <div className="flex">
+        <div className="w-1/2 p-3 pr-1">
           <label htmlFor="backgroundColor" className="block mb-1">
             Background
           </label>
-          <input
-            type="text"
-            className="block bg-white rounded border w-full p-1 px-2"
-            id="backgroundColor"
-            name="backgroundColor"
+          <TextInput
             value={backgroundColor}
-            onInput={(e) => setBackgroundColor(e.target.value)}
+            setValue={setBackgroundColor}
+            placeholder="#ffffff"
           />
         </div>
-        <div className="w-1/2 p-3 pl-2">
+        <div className="w-1/2 p-3 pl-1">
           <label htmlFor="foregroundColor" className="block mb-1">
             Foreground
           </label>
-          <input
-            type="text"
-            className="block bg-white rounded border w-full p-1 px-2"
-            id="foregroundColor"
-            name="foregroundColor"
+          <TextInput
             value={foregroundColor}
-            onInput={(e) => setForegroundColor(e.target.value)}
+            setValue={setForegroundColor}
+            placeholder="#000000"
           />
         </div>
-      </form>
-      <div className="p-3 pt-0 mb-2">
-        <span className="block mb-1">Suggested Combinations</span>
-        <div className="flex mb-2">
-          <Preset name="White/Black" bg="#ffffff" fg="#000000" />
-          <Preset name="Black/White" bg="#000000" fg="#ffffff" />
-          <Preset name="Blue/Blue" bg="#000080" fg="#b4cde2" />
+      </div>
+      <div className="p-3 pt-0">
+        <span className="block mb-1">Dark Presets</span>
+        <div className="flex -mx-1">
+          <Preset name="Black" bg="#000000" fg="#ffffff" />
+          <Preset name="Blue" bg="#052c65" fg="#cfe2ff" />
+          <Preset name="Green" bg="#0a3622" fg="#d1e7dd" />
         </div>
-        <div className="flex">
-          <Preset name="Purple/Peach" bg="#5f4b8b" fg="#e69a8d" />
-          <Preset name="Black/Green" bg="#000000" fg="#1DB954" />
-          <Preset name="Cream/Maroon" bg="#f0e9eb" fg="#7a0b45" />
+        <div className="flex -mx-1 mb-2">
+          <Preset name="Mono" bg="#000000" fg="#1DB954" />
+          <Preset name="Red" bg="#58151c" fg="#f8d7da" />
+          <Preset name="Purple" bg="#301934" fg="#FFDBBB" />
+        </div>
+        <span className="block mb-1">Light Presets</span>
+        <div className="flex -mx-1">
+          <Preset name="White" bg="#ffffff" fg="#000000" />
+          <Preset name="Blue" bg="#cfe2ff" fg="#052c65" />
+          <Preset name="Green" bg="#d1e7dd" fg="#0a3622" />
+        </div>
+        <div className="flex -mx-1">
+          <Preset name="Maroon" bg="#f0e9eb" fg="#7a0b45" />
+          <Preset name="Red" bg="#f8d7da" fg="#58151c" />
+          <Preset name="Purple" bg="#FFDBBB" fg="#301934" />
         </div>
       </div>
       <div className="flex justify-between p-3 border-t">
-        <span
-          className="border rounded px-3 py-1 cursor-pointer"
-          onClick={onClose}
-        >
-          Close
-        </span>
-        <span
-          className="bg-black text-white rounded px-3 py-1 cursor-pointer"
+        <ButtonOutline onClick={onClose}>Close</ButtonOutline>
+        <Button
           onClick={() => {
             handleUpdateColors(backgroundColor, foregroundColor);
             onClose();
           }}
         >
           Update Colors
-        </span>
+        </Button>
       </div>
     </Modal>
   );

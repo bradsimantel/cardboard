@@ -2,7 +2,7 @@ import { h, Fragment } from "preact";
 import { useState } from "preact/hooks";
 import { Link } from "preact-router/match";
 
-import ColorsModal from "./colors-modal";
+import ModalColors from "./colors-modal";
 import Icon from "./icon";
 
 export default function Sidebar({ boards }) {
@@ -18,7 +18,7 @@ export default function Sidebar({ boards }) {
           <div className="p-3 border-b">
             <div className="flex items-center justify-between mb-1 py-1">
               <div className="flex items-center">
-                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mr-2">
+                <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center mr-2">
                   <small>PI</small>
                 </div>
                 <span>Playful Industries</span>
@@ -70,7 +70,7 @@ export default function Sidebar({ boards }) {
           </div>
         </div>
       </div>
-      <ColorsModal isOpen={isModalOpen} onClose={closeModal} />
+      <ModalColors isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 }
