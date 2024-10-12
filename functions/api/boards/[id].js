@@ -7,22 +7,43 @@ export async function onRequestGet(context) {
     const board = await DB.prepare(boardSql).bind(id).first();
     const colSql = "SELECT * FROM columns WHERE board_id = ?";
     const { results: columns } = await DB.prepare(colSql).bind(id).all();
-    const taskSql = "SELECT * FROM tasks WHERE board_id = ?";
-    const { results: tasks } = await DB.prepare(taskSql).bind(id).all();
+    const cardSql = "SELECT * FROM cards WHERE board_id = ?";
+    const { results: cards } = await DB.prepare(cardSql).bind(id).all();
+    const userSql = "SELECT * FROM users WHERE id IN (?)";
+    const uniqueAssigneeIds = [
+      ...new Set(
+        cards.map((card) => card.assignee_id).filter((id) => id !== null)
+      ),
+    ];
+    const { results: users } = await DB.prepare(userSql)
+      .bind(uniqueAssigneeIds.join(","))
+      .all();
 
-    if (!board || !columns || !tasks) {
+    cards.forEach((card) => {
+      if (card.assignee_id) {
+        const assignee = users.find((user) => user.id === card.assignee_id);
+        if (assignee) {
+          card.assignee = assignee;
+        }
+      }
+    });
+
+    if (!board || !columns || !cards) {
       return new Response(null, {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      console.log({ board, columns, tasks });
       const hydratedBoard = {
         ...board,
-        columns: columns.map((column) => ({
-          ...column,
-          tasks: tasks.filter((task) => task.column_id === column.id),
-        })),
+        columns: columns
+          .sort((a, b) => a.position - b.position)
+          .map((column) => ({
+            ...column,
+            cards: cards
+              .filter((card) => card.column_id === column.id)
+              .sort((a, b) => a.position - b.position),
+          })),
       };
 
       return new Response(JSON.stringify(hydratedBoard), {

@@ -5,7 +5,7 @@ import { Link } from "preact-router/match";
 import ColorsModal from "./colors-modal";
 import Icon from "./icon";
 
-export default function Sidebar() {
+export default function Sidebar({ boards }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
@@ -43,30 +43,17 @@ export default function Sidebar() {
               <small>BOARDS</small>
               <Icon type="plus" height="18" />
             </div>
-            <Link
-              href="/boards/1"
-              activeClass="bg-black text-white group"
-              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
-            >
-              <Icon type="spa" height="18" className="mr-2" />
-              <span>Design</span>
-            </Link>
-            <Link
-              href="/boards/2"
-              activeClass="bg-black text-white group"
-              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
-            >
-              <Icon type="leaf" height="18" className="mr-2" />
-              <span>Green Initiatives</span>
-            </Link>
-            <Link
-              href="/boards/3"
-              activeClass="bg-black text-white group"
-              className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
-            >
-              <Icon type="pyramid" height="18" className="mr-2" />
-              <span>Active Development</span>
-            </Link>
+            {boards.map((board) => (
+              <Link
+                key={board.id}
+                href={`/boards/${board.id}`}
+                activeClass="bg-black text-white group"
+                className="flex items-center p-1 mb-0.5 rounded-lg cursor-pointer no-underline hover:bg-black hover:text-white group"
+              >
+                <Icon type={board.icon} height="18" className="mr-2" />
+                <span>{board.name}</span>
+              </Link>
+            ))}
           </div>
         </div>
         <div className="p-3 border-t">

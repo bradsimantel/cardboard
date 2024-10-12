@@ -8,7 +8,7 @@
     "db:migrate:production": "wrangler d1 migrations apply DB --remote",
     "dev": "concurrently -k \"npm run dev:wrangler\" \"npm run dev:esbuild\" \"npm run dev:tailwind\"",
     "dev:wrangler": "wrangler pages dev",
-    "dev:esbuild": "esbuild src/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment --watch",
+    "dev:esbuild": "esbuild src/app.jsx --bundle --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment --watch",
     "dev:tailwind": "tailwindcss -i src/app.css -o public/app.css --watch"
   },
   "devDependencies": {

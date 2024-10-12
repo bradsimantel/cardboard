@@ -4,7 +4,7 @@ import Sortable from "sortablejs";
 import Card from "./card";
 import Icon from "./icon";
 
-export default function Column({ title, tasks }) {
+export default function Column({ name, cards }) {
   const columnRef = useRef(null);
 
   useEffect(() => {
@@ -22,21 +22,21 @@ export default function Column({ title, tasks }) {
   return (
     <div className="w-1/3">
       <div className="p-3 pb-0 flex items-center justify-between">
-        <span>{title}</span>
+        <span>{name}</span>
         <div className="flex items-center">
           <Icon type="plus" />
           <Icon type="dots" />
         </div>
       </div>
       <div className="column" ref={columnRef}>
-        {tasks.map((task) => (
+        {cards.map((card) => (
           <Card
-            key={task.title}
-            category={task.category}
-            title={task.title}
-            assignee={task.assignee}
-            tags={task.tags}
-            comments={task.comments}
+            key={card.name}
+            category={card.category}
+            title={card.name}
+            assignee={card.assignee}
+            tags={card.tags}
+            comments={card.comments}
           />
         ))}
       </div>

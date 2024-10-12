@@ -3,16 +3,16 @@ export async function onRequestGet(context) {
   try {
     const { DB } = context.env;
     const id = Number(context.params.id);
-    const sql = "SELECT * FROM tasks WHERE id = ?";
-    const task = await DB.prepare(sql).bind(id).first();
+    const sql = "SELECT * FROM cards WHERE id = ?";
+    const card = await DB.prepare(sql).bind(id).first();
 
-    if (!task) {
+    if (!card) {
       return new Response(null, {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      return new Response(JSON.stringify(task), {
+      return new Response(JSON.stringify(card), {
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -30,16 +30,16 @@ export async function onRequestPut(context) {
     const { DB } = context.env;
     const { name } = await context.request.json();
     const id = Number(context.params.id);
-    const sql = "UPDATE tasks SET name = ? WHERE id = ? RETURNING *";
-    const task = await DB.prepare(sql).bind(name, id).first();
+    const sql = "UPDATE cards SET name = ? WHERE id = ? RETURNING *";
+    const card = await DB.prepare(sql).bind(name, id).first();
 
-    if (!task) {
+    if (!card) {
       return new Response(null, {
         status: 404,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      return new Response(JSON.stringify(task), {
+      return new Response(JSON.stringify(card), {
         headers: { "Content-Type": "application/json" },
       });
     }
@@ -56,7 +56,7 @@ export async function onRequestDelete(context) {
   try {
     const { DB } = context.env;
     const id = Number(context.params.id);
-    const sql = "DELETE FROM tasks WHERE id = ?";
+    const sql = "DELETE FROM cards WHERE id = ?";
 
     await DB.prepare(sql).bind(id).run();
     return new Response(null, { status: 204 });

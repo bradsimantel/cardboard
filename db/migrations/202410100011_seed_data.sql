@@ -31,12 +31,12 @@ INSERT INTO categories (organization_id, name) VALUES
 (1, 'Color'),
 (1, 'Tags');
 
--- Insert tasks for the first board
-INSERT INTO cards (organization_id, board_id, column_id, name, description, position) VALUES
-(1, 1, 1, 'Task 1', 'This is the first task', 1),
-(1, 1, 1, 'Task 2', 'This is the second task', 2),
-(1, 1, 2, 'Task 3', 'This is the third task', 1),
-(1, 1, 3, 'Task 4', 'This is the fourth task', 1);
+-- Insert cards for the first board
+INSERT INTO cards (organization_id, board_id, column_id, name, description, position, assignee_id) VALUES
+(1, 1, 1, 'Card 1', 'This is the first card', 1, 1),
+(1, 1, 1, 'Card 2', 'This is the second card', 2, 1),
+(1, 1, 2, 'Card 3', 'This is the third card', 1, null),
+(1, 1, 3, 'Card 4', 'This is the fourth card', 1, null);
 
 -- -- Insert card categories
 INSERT INTO card_categories (organization_id, card_id, category_id) VALUES

@@ -2,19 +2,21 @@ import { h } from "preact";
 import Icon from "./icon";
 
 export default function Card({
-  category = "",
   title = "",
-  assignee = "",
+  category = "", // TODO: Switch this to object
+  assignee = {},
   tags = [],
   comments = [],
   attachments = [],
 }) {
-  const initials = assignee
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+  const initials = assignee.name
+    ? assignee.name
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase()
+    : "";
   return (
     <div className="card border cursor-pointer rounded-lg p-2 m-3 bg-white">
       <div>
@@ -22,7 +24,7 @@ export default function Card({
       </div>
       <div className="my-2">{title}</div>
       <div className="flex items-center">
-        <div className="circle mr-2 bg-black text-white flex items-center justify-center w-8 h-8 rounded-full">
+        <div className="mr-2 bg-black text-white flex items-center justify-center w-6 h-6 rounded-full">
           <small>{initials}</small>
         </div>
         <div className="flex items-center mr-2">
