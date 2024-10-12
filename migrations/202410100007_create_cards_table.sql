@@ -1,0 +1,11 @@
+CREATE TABLE cards (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  organization_id INT NOT NULL REFERENCES organizations(id) ON DELETE CASCADE,
+  board_id INT NOT NULL REFERENCES boards(id) ON DELETE CASCADE,
+  column_id INT NOT NULL REFERENCES columns(id) ON DELETE CASCADE,
+  assignee_id INT REFERENCES memberships(id) ON DELETE SET NULL,
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  position INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
