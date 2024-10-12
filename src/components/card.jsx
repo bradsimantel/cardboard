@@ -9,7 +9,7 @@ export default function Card({
   comments = [],
   attachments = [],
 }) {
-  const initials = assignee.name
+  const initials = assignee
     ? assignee.name
         .split(" ")
         .map((n) => n[0])

@@ -1,23 +1,35 @@
 # Cardboard
 
-A simple, themeable, duochromatic kanban board.
+A simple themeable kanban board.
 
 ## Development
 
-Use `npm run dev` to start both `wrangler` and `esbuild`.
+Run `npm run dev` to start `wrangler`, `tailwind`, and `esbuild` in dev mode.
+
+## Migrations
+
+Run `npm run db:migrate` to run migrations against your local development database, or `npm run db:migrate:production` to run migrations against the production database.
+
+You can use `npm run db:drop` to delete the local development DB (helpful while messing with migrations).
 
 ## To Do
 
-- [ ] The board should scroll when it overflows
-- [ ] Task modal
-- [ ] Add or delete tasks
+- [ ] Card modal or pane, with deep linking
+- [ ] Add or delete cards
 - [ ] Add, rename, or remove columns
 - [ ] Add, rename, or remove boards
 - [ ] Subtasks as checkboxes
+
 - [ ] Decide if I need full SortableJS or can drop default plugins
 - [ ] Or use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
 
 
-- are migrations run on pages deploy, or only manually?
-- query inspo: https://github.com/aminroosta/sqlite-cloudflare-d1/blob/master/src/index.ts
-- more query inspo: https://developers.cloudflare.com/d1/build-with-d1/d1-client-api/#await-stmtfirstcolumn
+- [ ] Are migrations run on pages deploy, or only manually?
+
+- [ ] Adopt an ORM or something
+  - [List of options](https://developers.cloudflare.com/d1/reference/community-projects/)
+  - [Basic D1 query builder](https://github.com/aminroosta/sqlite-cloudflare-d1)
+  - [Rawdog](https://developers.cloudflare.com/d1/build-with-d1/d1-client-api)
+  - [sql-template-tag](https://github.com/blakeembrey/sql-template-tag)
+  - [Flyweight, mostly for the `json_object` stuff](https://github.com/thebinarysearchtree/flyweight)
+    - Could I get this in a template tag function?
