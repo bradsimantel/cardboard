@@ -9,6 +9,13 @@
   }
 }
 
+/* Selection color */
+
+::selection {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
 /* SortableJS styling for the element about to be dropped */
 
 .card {
