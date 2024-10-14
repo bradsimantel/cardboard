@@ -2,14 +2,13 @@ import { h, Fragment } from "preact";
 import { useState } from "preact/hooks";
 import { Link } from "preact-router/match";
 
-import ModalColors from "./colors-modal";
+import ModalColors from "./modal-colors";
+import ModalUserSettings from "./modal-user-settings";
 import Icon from "./icon";
 
 export default function Sidebar({ boards }) {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  const [isModalColorsOpen, setModalColorsOpen] = useState(false);
+  const [isModalUserSettingsOpen, setModalUserSettingsOpen] = useState(false);
 
   return (
     <>
@@ -59,18 +58,28 @@ export default function Sidebar({ boards }) {
         <div className="p-3 border-t">
           <div
             className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group"
-            onClick={openModal}
+            onClick={() => setModalColorsOpen(true)}
           >
             <Icon type="tone" height="18" className="mr-2" />
             <span>Colors</span>
           </div>
-          <div className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group">
+          <div
+            className="flex items-center p-1 rounded-lg cursor-pointer hover:bg-black hover:text-white group"
+            onClick={() => setModalUserSettingsOpen(true)}
+          >
             <Icon type="cog" height="18" className="mr-2" />
             <span>Settings</span>
           </div>
         </div>
       </div>
-      <ModalColors isOpen={isModalOpen} onClose={closeModal} />
+      <ModalColors
+        isOpen={isModalColorsOpen}
+        onClose={() => setModalColorsOpen(false)}
+      />
+      <ModalUserSettings
+        isOpen={isModalUserSettingsOpen}
+        onClose={() => setModalUserSettingsOpen(false)}
+      />
     </>
   );
 }

@@ -6,7 +6,7 @@ import Button from "./button";
 import ButtonOutline from "./button-outline";
 import Icon from "./icon";
 
-export default function ColorsModal({ isOpen, onClose }) {
+export default function ModalColors({ isOpen, onClose }) {
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
   const [foregroundColor, setForegroundColor] = useState("#000000");
 
@@ -33,7 +33,6 @@ export default function ColorsModal({ isOpen, onClose }) {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="p-3 border-b flex justify-between items-center">
         <div className="flex items-center">
-          <Icon type="thing" className="mr-2" />
           <span>Colors</span>
         </div>
         <Icon type="close" />
