@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.jsx"],
+  content: ["./ui/**/*.jsx"],
   theme: {
     colors: {
       black: "var(--color-black)",

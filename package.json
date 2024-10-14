@@ -1,15 +1,15 @@
 {
   "scripts": {
     "build": "npm run build:tailwind && npm run build:esbuild",
-    "build:tailwind": "tailwindcss -i src/app.css -o public/app.css",
-    "build:esbuild": "esbuild src/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment",
+    "build:tailwind": "tailwindcss -i ui/app.css -o public/app.css",
+    "build:esbuild": "esbuild ui/app.jsx --bundle --minify --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment",
     "db:drop": "rm -rf .wrangler/state",
     "db:migrate": "wrangler d1 migrations apply DB --local",
     "db:migrate:production": "wrangler d1 migrations apply DB --remote",
     "dev": "concurrently -k \"npm run dev:wrangler\" \"npm run dev:esbuild\" \"npm run dev:tailwind\"",
     "dev:wrangler": "wrangler pages dev",
-    "dev:esbuild": "esbuild src/app.jsx --bundle --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment --watch",
-    "dev:tailwind": "tailwindcss -i src/app.css -o public/app.css --watch"
+    "dev:esbuild": "esbuild ui/app.jsx --bundle --outfile=public/app.js --jsx-factory=h --jsx-fragment=Fragment --watch",
+    "dev:tailwind": "tailwindcss -i ui/app.css -o public/app.css --watch"
   },
   "devDependencies": {
     "concurrently": "^9.0.1",
