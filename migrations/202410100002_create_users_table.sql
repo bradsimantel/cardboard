@@ -3,5 +3,7 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
+  background_color VARCHAR(255) NOT NULL DEFAULT '#ffffff',
+  foreground_color VARCHAR(255) NOT NULL DEFAULT '#000000',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
