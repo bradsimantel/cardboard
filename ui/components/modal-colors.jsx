@@ -1,7 +1,7 @@
 import { h } from "preact";
 import { useState } from "preact/hooks";
 import Modal from "./modal";
-import TextInput from "./text-input";
+import Input from "./input";
 import Button from "./button";
 import ButtonOutline from "./button-outline";
 import Icon from "./icon";
@@ -42,7 +42,7 @@ export default function ModalColors({ isOpen, onClose }) {
           <label htmlFor="backgroundColor" className="block mb-1">
             Background
           </label>
-          <TextInput
+          <Input
             value={backgroundColor}
             setValue={setBackgroundColor}
             placeholder="#ffffff"
@@ -52,7 +52,7 @@ export default function ModalColors({ isOpen, onClose }) {
           <label htmlFor="foregroundColor" className="block mb-1">
             Foreground
           </label>
-          <TextInput
+          <Input
             value={foregroundColor}
             setValue={setForegroundColor}
             placeholder="#000000"

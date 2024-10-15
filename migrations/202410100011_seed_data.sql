@@ -2,9 +2,9 @@
 INSERT INTO organizations (name) VALUES
 ('Example Organization');
 
--- Insert a user
+-- Insert a user with the password "password"
 INSERT INTO users (name, email, password)
-VALUES ('Brad Simantel', 'brad@example.com', 'encrypted');
+VALUES ('Brad Simantel', 'brad@cardboard.com', '$2a$08$jk6pQVDVvDJM5FCL4rMCwOQIGbKstfJ8waOY6MdDDooQJaLW/tkAC');
 
 -- Insert a membership
 INSERT INTO memberships (organization_id, user_id, role)

@@ -1,9 +1,9 @@
 import { h } from "preact";
 
-export default function TextInput({ value, setValue, placeholder }) {
+export default function Input({ value, setValue, placeholder, type = "text" }) {
   return (
     <input
-      type="text"
+      type={type}
       value={value}
       onInput={(e) => setValue(e.target.value)}
       placeholder={placeholder}
