@@ -19,6 +19,7 @@ You can use `npm run db:drop` to delete the local development DB (helpful while 
 - [ ] Add, rename, or remove columns
 - [ ] Add, rename, or remove boards
 - [ ] Subtasks as checkboxes
+- [ ] CSS dithering: https://cohost.org/-12/post/185483-css-dithering-filter
 
 - [ ] Decide if I need full SortableJS or can drop default plugins
 - [ ] Or use pragmatic drag and drop: https://atlassian.design/components/pragmatic-drag-and-drop/core-package/
