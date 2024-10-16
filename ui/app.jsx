@@ -1,6 +1,7 @@
 import { h, render } from "preact";
 import { Router } from "preact-router";
 
+import Home from "./routes/home";
 import Signup from "./routes/signup";
 import Login from "./routes/login";
 import Everything from "./routes/everything";
@@ -11,6 +12,7 @@ export default function App() {
   return (
     <div className="bg-white text-black">
       <Router>
+        <Home path="/" />
         <Signup path="/signup" />
         <Login path="/login" />
         <Everything path="/everything" />
