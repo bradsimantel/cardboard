@@ -41,27 +41,24 @@ export default function Home() {
     return matrix.map((v) => v.toFixed(6)).join(" ");
   };
 
-  const matrixValues = hexToMatrixValues("#0000FF", "#FFA500");
+  const matrixValues = hexToMatrixValues("#052c65", "#cfe2ff");
+
+  const svgFilter = `
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <filter id="color-shift" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="${matrixValues}" />
+      </filter>
+    </svg>
+  `;
+
+  const svgDataUrl = `data:image/svg+xml;base64,${btoa(svgFilter)}`;
 
   return (
     <>
-      <svg class="defs-only">
-        <filter
-          id="color-shift"
-          color-interpolation-filters="sRGB"
-          x="0"
-          y="0"
-          height="100%"
-          width="100%"
-        >
-          <feColorMatrix type="matrix" values={matrixValues} />
-        </filter>
-      </svg>
-
-      <div style="filter: url(#color-shift);">
+      <div style={`filter: url(${svgDataUrl}#color-shift);`}>
         <div style='background: url("data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY="); filter: contrast(20000)'>
           <div style="mix-blend-mode: soft-light; filter: grayscale(100%);">
-            <img src="/beach.jpg" />
+            <div style="height: 100%; background-image: url(/beach.jpg); background-size: cover; background-position: center;" />
           </div>
         </div>
       </div>
