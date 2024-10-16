@@ -8,14 +8,14 @@ export default function Home() {
     return `${r} 0 0 0 0 ${g} 0 0 0 0 ${b} 0 0 0 0 0 0 0 1 0`;
   };
 
-  const colorHex = "#00308F"; // Example hex value
+  const colorHex = "#ff00ff"; // Example hex value
   const matrixValues = hexToMatrixValues(colorHex);
 
   return (
     <>
       <svg class="defs-only">
         <filter
-          id="monochrome"
+          id="color-shift"
           color-interpolation-filters="sRGB"
           x="0"
           y="0"
@@ -26,9 +26,9 @@ export default function Home() {
         </filter>
       </svg>
 
-      <div style="filter: url(#monochrome);">
-        <div style='background: url("data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY="); filter: contrast(2000%) grayscale(100%);'>
-          <div style="mix-blend-mode: soft-light;">
+      <div style="filter: url(#color-shift);">
+        <div style='background: url("data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY="); filter: contrast(20000)'>
+          <div style="mix-blend-mode: soft-light; filter: grayscale(100%);">
             <img src="/beach.jpg" />
           </div>
         </div>
