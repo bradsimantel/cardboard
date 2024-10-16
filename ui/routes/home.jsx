@@ -1,15 +1,47 @@
 import { h, Fragment } from "preact";
 
 export default function Home() {
-  const hexToMatrixValues = (hex) => {
-    const r = parseInt(hex.slice(1, 3), 16) / 255;
-    const g = parseInt(hex.slice(3, 5), 16) / 255;
-    const b = parseInt(hex.slice(5, 7), 16) / 255;
-    return `${r} 0 0 0 0 ${g} 0 0 0 0 ${b} 0 0 0 0 0 0 0 1 0`;
+  const hexToMatrixValues = (blackHex, whiteHex) => {
+    // Convert hex to RGB
+    const hexToRgb = (hex) => {
+      const r = parseInt(hex.slice(1, 3), 16) / 255;
+      const g = parseInt(hex.slice(3, 5), 16) / 255;
+      const b = parseInt(hex.slice(5, 7), 16) / 255;
+      return [r, g, b];
+    };
+
+    const black = hexToRgb(blackHex);
+    const white = hexToRgb(whiteHex);
+
+    // Calculate the matrix values
+    const matrix = [
+      white[0] - black[0],
+      0,
+      0,
+      0,
+      black[0],
+      0,
+      white[1] - black[1],
+      0,
+      0,
+      black[1],
+      0,
+      0,
+      white[2] - black[2],
+      0,
+      black[2],
+      0,
+      0,
+      0,
+      1,
+      0,
+    ];
+
+    // Round the values to 6 decimal places and join them
+    return matrix.map((v) => v.toFixed(6)).join(" ");
   };
 
-  const colorHex = "#ff00ff"; // Example hex value
-  const matrixValues = hexToMatrixValues(colorHex);
+  const matrixValues = hexToMatrixValues("#0000FF", "#FFA500");
 
   return (
     <>
