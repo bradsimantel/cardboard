@@ -60,16 +60,13 @@ export default function Home() {
         style={{ filter: `url(${svgDataUrl}#color-shift)` }}
       >
         <div className="bg-[url('data:image/webp;base64,UklGRjAAAABXRUJQVlA4TCQAAAAvA8AAAIVS27ahb3uzOUmSJoqqrOq6P47of8DQdcprYdP8/VY=')] contrast-[20000%]">
-          <div className="mix-blend-soft-light grayscale">
-            <div className="h-full bg-[url(/beach.jpg)] bg-cover bg-center flex flex-col items-center justify-center">
-              <h1 className="text-5xl text-[#cfe2ff] mix-blend-difference font-serif">
-                Organize anything together
-              </h1>
-              <h2 className="text-2xl text-[#cfe2ff] mix-blend-difference">
-                Manage your projects, hiring processes, sales pipelines, and
-                more
-              </h2>
-            </div>
+          <div className="mix-blend-soft-light grayscale h-full bg-[url(/beach.jpg)] bg-cover bg-center flex flex-col items-center justify-center">
+            <h1 className="text-5xl text-[#cfe2ff] mix-blend-difference font-serif">
+              Organize anything together
+            </h1>
+            <h2 className="text-2xl text-[#cfe2ff] mix-blend-difference">
+              Manage your projects, hiring processes, sales pipelines, and more
+            </h2>
           </div>
         </div>
       </div>
